@@ -1,0 +1,214 @@
+.markdown {
+  color: var(--text-primary);
+  line-height: var(--line-height-base);
+}
+
+/* 标题样式 */
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown h6 {
+  margin-top: var(--spacing-xl);
+  margin-bottom: var(--spacing-md);
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--text-primary);
+}
+
+.markdown h1 {
+  font-size: 2.5rem;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: var(--spacing-md);
+}
+
+.markdown h2 {
+  font-size: 2rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: var(--spacing-sm);
+}
+
+.markdown h3 {
+  font-size: 1.5rem;
+}
+
+.markdown h4 {
+  font-size: 1.25rem;
+}
+
+.markdown h5 {
+  font-size: 1.1rem;
+}
+
+.markdown h6 {
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+/* 段落 */
+.markdown p {
+  margin: var(--spacing-md) 0;
+  line-height: 1.8;
+}
+
+/* 链接 */
+.markdown a {
+  color: var(--link-color);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all var(--transition-base);
+}
+
+.markdown a:hover {
+  color: var(--link-hover);
+  border-bottom-color: var(--link-hover);
+}
+
+/* 列表 */
+.markdown ul,
+.markdown ol {
+  margin: var(--spacing-md) 0;
+  padding-left: var(--spacing-xl);
+}
+
+.markdown li {
+  margin: var(--spacing-sm) 0;
+  line-height: 1.8;
+}
+
+.markdown li > p {
+  margin: var(--spacing-xs) 0;
+}
+
+/* 任务列表 */
+.markdown .task-list-item {
+  list-style: none;
+  margin-left: calc(-1 * var(--spacing-xl));
+  padding-left: var(--spacing-xl);
+}
+
+.markdown .task-list-item input[type="checkbox"] {
+  margin-right: var(--spacing-sm);
+}
+
+/* 引用块 */
+.markdown blockquote {
+  margin: var(--spacing-lg) 0;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-left: 4px solid var(--primary-color);
+  background-color: var(--bg-secondary);
+  color: var(--text-secondary);
+}
+
+.markdown blockquote p {
+  margin: var(--spacing-sm) 0;
+}
+
+/* 代码 */
+.markdown code {
+  font-family: var(--font-family-code);
+  background-color: var(--code-bg);
+  color: var(--code-color);
+  padding: 2px 6px;
+  border-radius: var(--border-radius-sm);
+  font-size: 0.9em;
+}
+
+.markdown pre {
+  margin: var(--spacing-lg) 0;
+  padding: var(--spacing-md);
+  background-color: var(--code-bg);
+  border-radius: var(--border-radius-md);
+  overflow-x: auto;
+}
+
+.markdown pre code {
+  background: none;
+  padding: 0;
+  color: inherit;
+  font-size: 0.9rem;
+}
+
+/* 表格 */
+.markdown table {
+  width: 100%;
+  margin: var(--spacing-lg) 0;
+  border-collapse: collapse;
+  overflow-x: auto;
+  display: block;
+}
+
+.markdown table thead {
+  background-color: var(--bg-secondary);
+}
+
+.markdown table th,
+.markdown table td {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid var(--border-color);
+  text-align: left;
+}
+
+.markdown table th {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.markdown table tr:nth-child(even) {
+  background-color: var(--bg-secondary);
+}
+
+/* 分割线 */
+.markdown hr {
+  margin: var(--spacing-xl) 0;
+  border: none;
+  border-top: 2px solid var(--border-color);
+}
+
+/* 图片 */
+.markdown img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--border-radius-md);
+  margin: var(--spacing-md) 0;
+}
+
+/* 锚点链接 */
+.markdown .header-anchor {
+  opacity: 0;
+  margin-left: var(--spacing-sm);
+  transition: opacity var(--transition-base);
+}
+
+.markdown h1:hover .header-anchor,
+.markdown h2:hover .header-anchor,
+.markdown h3:hover .header-anchor,
+.markdown h4:hover .header-anchor,
+.markdown h5:hover .header-anchor,
+.markdown h6:hover .header-anchor {
+  opacity: 1;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .markdown h1 {
+    font-size: 2rem;
+  }
+
+  .markdown h2 {
+    font-size: 1.5rem;
+  }
+
+  .markdown h3 {
+    font-size: 1.25rem;
+  }
+
+  .markdown table {
+    font-size: var(--font-size-sm);
+  }
+
+  .markdown pre {
+    padding: var(--spacing-sm);
+  }
+}

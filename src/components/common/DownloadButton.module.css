@@ -1,0 +1,140 @@
+.downloadButton {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md) var(--spacing-lg);
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: all var(--transition-base);
+  cursor: pointer;
+}
+
+.downloadButton:hover {
+  background-color: var(--bg-tertiary);
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.description {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-xs);
+}
+
+.size {
+  font-size: var(--font-size-sm);
+  color: var(--text-tertiary);
+}
+
+.downloadIcon {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  flex-shrink: 0;
+}
+
+/* 变体样式 */
+.primary {
+  background-color: var(--primary-color);
+  color: var(--text-on-primary);
+  border-color: var(--primary-color);
+}
+
+.primary:hover {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+}
+
+.primary .title,
+.primary .description,
+.primary .size {
+  color: var(--text-on-primary);
+}
+
+.primary .downloadIcon {
+  color: var(--text-on-primary);
+}
+
+/* 尺寸样式 */
+.small {
+  padding: var(--spacing-sm) var(--spacing-md);
+  gap: var(--spacing-sm);
+}
+
+.small .icon {
+  font-size: 1.5rem;
+}
+
+.small .downloadIcon {
+  font-size: 1.2rem;
+}
+
+.large {
+  padding: var(--spacing-lg) var(--spacing-xl);
+  gap: var(--spacing-lg);
+}
+
+.large .icon {
+  font-size: 2.5rem;
+}
+
+.large .title {
+  font-size: var(--font-size-lg);
+}
+
+/* 文件列表 */
+.fileList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.emptyState {
+  text-align: center;
+  padding: var(--spacing-xl);
+  color: var(--text-tertiary);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .downloadButton {
+    padding: var(--spacing-sm) var(--spacing-md);
+    gap: var(--spacing-sm);
+  }
+
+  .icon {
+    font-size: 1.5rem;
+  }
+
+  .title {
+    font-size: var(--font-size-base);
+  }
+
+  .description,
+  .size {
+    font-size: 0.8rem;
+  }
+
+  .downloadIcon {
+    font-size: 1.2rem;
+  }
+}

@@ -1,0 +1,60 @@
+/* Academic 主题 - 学术主题 */
+[data-theme="academic"] {
+  /* 主色系 */
+  --primary-color: #2c3e50;
+  --primary-hover: #34495e;
+  --primary-light: #7f8c8d;
+  
+  /* 背景色系 */
+  --bg-primary: #fefefe;
+  --bg-secondary: #f8f9fa;
+  --bg-tertiary: #ecf0f1;
+  
+  /* 文字色系 */
+  --text-primary: #2c3e50;
+  --text-secondary: #7f8c8d;
+  --text-tertiary: #95a5a6;
+  --text-on-primary: #ffffff;
+  
+  /* 边框色系 */
+  --border-color: #dee2e6;
+  --divider-color: #bdc3c7;
+  
+  /* 链接色系 */
+  --link-color: #3498db;
+  --link-hover: #2980b9;
+  
+  /* 代码块色系 */
+  --code-bg: #f8f9fa;
+  --code-color: #c7254e;
+  
+  /* 字体设置 */
+  --font-family-base: 'Georgia', 'Times New Roman', serif;
+  --font-family-code: 'Courier New', Courier, monospace;
+  --font-size-base: 17px;
+  --font-size-lg: 19px;
+  --font-size-sm: 15px;
+  --line-height-base: 1.8;
+  
+  /* 圆角 */
+  --border-radius-sm: 2px;
+  --border-radius-md: 4px;
+  --border-radius-lg: 6px;
+  
+  /* 阴影 */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 2px 4px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.12);
+  
+  /* 间距 */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  
+  /* 动画 */
+  --transition-fast: 150ms ease-in-out;
+  --transition-base: 250ms ease-in-out;
+  --transition-slow: 350ms ease-in-out;
+}
