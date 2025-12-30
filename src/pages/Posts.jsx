@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { MarkdownRenderer } from '../components/markdown/MarkdownRenderer';
+import { loadAllMarkdownFiles } from '../utils/markdownIndex';
 import styles from './Posts.module.css';
 
 /**
  * 博客文章列表页面组件
+ * 自动扫描 content/posts/ 目录下的所有 Markdown 文件
  */
 export function Posts() {
   const [posts, setPosts] = useState([]);
@@ -21,17 +23,28 @@ export function Posts() {
       setLoading(true);
       setError(null);
       
-      // 这里可以通过配置或约定来获取文章列表
-      // 暂时硬编码一个示例文章
-      const postFiles = [
-        { name: 'welcome.md', title: '欢迎使用 PPage', path: '/content/posts/welcome.md' }
-      ];
+      // 使用自动扫描功能加载所有 Markdown 文件
+      const allMarkdownFiles = await loadAllMarkdownFiles();
       
+      // 只获取 posts 类型的文件
+      const postFiles = allMarkdownFiles
+        .filter(file => file.type === 'post')
+        .map(file => ({
+          name: file.path.split('/').pop(),
+          title: file.title,
+          path: file.path,
+          content: file.content
+        }));
+      
+      console.log(`自动发现 ${postFiles.length} 篇博客文章`);
       setPosts(postFiles);
       
       // 默认加载第一篇文章
       if (postFiles.length > 0) {
-        loadPost(postFiles[0].path);
+        setSelectedPost({
+          path: postFiles[0].path,
+          content: postFiles[0].content
+        });
       }
     } catch (err) {
       console.error('加载文章列表失败:', err);
@@ -43,6 +56,14 @@ export function Posts() {
 
   async function loadPost(path) {
     try {
+      // 先从已加载的 posts 中查找
+      const post = posts.find(p => p.path === path);
+      if (post && post.content) {
+        setSelectedPost({ path, content: post.content });
+        return;
+      }
+      
+      // 如果没有预加载的内容，则通过 fetch 加载
       const response = await fetch(path);
       if (!response.ok) {
         throw new Error(`加载文章失败: ${response.statusText}`);
@@ -73,9 +94,20 @@ export function Posts() {
 
   return (
     <div className={styles.posts}>
-      <h1 className={styles.title}>博客文章</h1>
+      <div className={styles.header}>
+        <h1 className={styles.title}>博客文章</h1>
+        {!loading && posts.length > 0 && (
+          <span className={styles.count}>共 {posts.length} 篇文章</span>
+        )}
+      </div>
       
-      <div className={styles.container}>
+      {posts.length === 0 && !loading ? (
+        <div className={styles.empty}>
+          <p>暂无博客文章</p>
+          <p className={styles.hint}>在 content/posts/ 目录下添加 Markdown 文件即可自动发现</p>
+        </div>
+      ) : (
+        <div className={styles.container}>
         {/* 文章列表侧边栏 */}
         <aside className={styles.sidebar}>
           <h2 className={styles.sidebarTitle}>文章列表</h2>
@@ -101,6 +133,7 @@ export function Posts() {
           )}
         </main>
       </div>
+      )}
     </div>
   );
 }
