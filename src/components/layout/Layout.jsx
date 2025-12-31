@@ -7,10 +7,10 @@ import styles from './Layout.module.css';
 /**
  * 主布局组件
  */
-export function Layout() {
+export function Layout({ folderConfigs = [] }) {
   return (
     <div className={styles.layout}>
-      <Header />
+      <Header folderConfigs={folderConfigs} />
       <main className={styles.main}>
         <div className={styles.container}>
           <Outlet />

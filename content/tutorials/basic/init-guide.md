@@ -1,3 +1,16 @@
+---
+title: PPage 初始化指南
+id: init-guide
+type: page
+collection: tutorials
+parent: basic-index
+order: 2
+date: 2025-12-31
+author: System
+tags: [tutorial, initialization, setup]
+category: 教程
+---
+
 # PPage 初始化指南
 
 ## 概述

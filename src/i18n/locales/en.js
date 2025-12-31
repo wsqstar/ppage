@@ -18,6 +18,7 @@ export const en = {
     about: 'About',
     posts: 'Blog',
     projects: 'Projects',
+    docs: 'Docs',
     files: 'Files',
     news: 'News',
   },
@@ -49,6 +50,17 @@ export const en = {
     emptyHint: 'Add Markdown files to content/posts/ directory for auto-discovery',
     selectPost: 'Please select a post',
     loadError: 'Failed to load post',
+  },
+
+  // Documentation page
+  pagesPage: {
+    title: 'Documentation',
+    listTitle: 'Document List',
+    count: '{count} documents in total',
+    empty: 'No documents',
+    emptyHint: 'Add Markdown files to content/pages/ directory for auto-discovery',
+    selectPage: 'Please select a document',
+    loadError: 'Failed to load document',
   },
 
   // Projects page
@@ -122,5 +134,14 @@ export const en = {
       submitted: 'Submitted',
       reject: 'Rejected',
     },
+  },
+
+  // Document Center Component
+  documentCenter: {
+    title: 'Documentation',
+    navigation: 'Navigation',
+    count: '{count} documents in total',
+    empty: 'No documents',
+    selectDocument: 'Please select a document',
   },
 };

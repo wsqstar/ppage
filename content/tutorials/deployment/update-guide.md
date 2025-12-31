@@ -1,3 +1,16 @@
+---
+title: PPage 更新指南
+id: update-guide
+type: page
+collection: tutorials
+parent: deployment-index
+order: 2
+date: 2025-12-31
+author: System
+tags: [tutorial, update, maintenance]
+category: 教程
+---
+
 # PPage 更新指南
 
 ## 概述
