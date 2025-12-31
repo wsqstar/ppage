@@ -70,6 +70,14 @@ cat dist/index.html | head -15
 ./scripts/deploy.sh root
 ```
 
+**配置示例** (`public/config.yml`):
+```yaml
+deploy:
+  repository: "https://github.com/wsqstar/ppage"
+  branch: "gh-pages"
+  customDomain: "shiqi-wang.com"  # 自动生成 CNAME 文件
+```
+
 ### 场景B：GitHub子目录 (yourusername.github.io/ppage)
 ```bash
 ./scripts/deploy.sh subdir
