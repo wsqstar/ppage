@@ -21,7 +21,10 @@ export function parseConfig(yamlContent) {
  */
 export async function loadConfig() {
   try {
-    const response = await fetch('/config.yml');
+    // 获取基础路径，支持子目录部署
+    const base = import.meta.env.BASE_URL || '/';
+    const configPath = `${base}config.yml`.replace(/\/+/g, '/');
+    const response = await fetch(configPath);
     if (!response.ok) {
       throw new Error(`配置文件加载失败: ${response.statusText}`);
     }

@@ -14,6 +14,17 @@ export function DownloadButton({
   }
 
   const { title, path, description, size: fileSize, type } = file;
+  
+  // 获取完整的文件路径，支持子目录部署
+  const getFullPath = (filePath) => {
+    const base = import.meta.env.BASE_URL || '/';
+    // 如果路径已经包含 base，直接返回
+    if (filePath.startsWith(base)) {
+      return filePath;
+    }
+    // 否则添加 base 路径
+    return `${base}${filePath.replace(/^\//, '')}`.replace(/\/+/g, '/');
+  };
 
   // 获取文件图标
   const getFileIcon = () => {
@@ -33,7 +44,7 @@ export function DownloadButton({
 
   return (
     <a
-      href={path}
+      href={getFullPath(path)}
       download
       className={`${styles.downloadButton} ${styles[variant]} ${styles[size]}`}
       target="_blank"
