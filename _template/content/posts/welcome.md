@@ -1,72 +1,23 @@
-# 欢迎使用 PPage
-
-这是一篇示例文章，展示 PPage 的 Markdown 渲染能力。
-
-## 功能特性
-
-PPage 是一个功能强大的个人主页系统，具有以下特性：
-
-- ✅ **纯前端部署** - 无需服务器和数据库
-- ✅ **Markdown 驱动** - 使用 Markdown 编写内容
-- ✅ **多主题支持** - 明亮、暗黑、学术三种主题
-- ✅ **响应式设计** - 完美适配各种设备
-- ✅ **零成本托管** - 部署到 GitHub Pages
-
-## 代码示例
-
-PPage 支持代码高亮：
-
-```javascript
-// JavaScript 示例
-function greet(name) {
-  console.log(`Hello, ${name}!`);
-}
-
-greet('PPage');
-```
-
-```python
-# Python 示例
-def fibonacci(n):
-    if n <= 1:
-        return n
-    return fibonacci(n-1) + fibonacci(n-2)
-
-print(fibonacci(10))
-```
-
-## 表格支持
-
-| 功能 | 支持程度 | 说明 |
-|------|---------|------|
-| Markdown | ✅ 完全支持 | 标准 Markdown 语法 |
-| 代码高亮 | ✅ 完全支持 | 多种编程语言 |
-| 主题切换 | ✅ 完全支持 | 3种预设主题 |
-| PDF 预览 | ✅ 完全支持 | 浏览器内嵌预览 |
-
-## 任务列表
-
-- [x] 完成项目初始化
-- [x] 实现配置系统
-- [x] 开发主题系统
-- [x] 添加 Markdown 渲染
-- [ ] 添加更多主题
-- [ ] 支持评论系统
-
-## 引用块
-
-> "简洁是智慧的灵魂，冗长是肤浅的藻饰。"
-> 
-> —— 莎士比亚
-
-## 链接和图片
-
-访问 [PPage 仓库](https://github.com/mappedinfo/ppage) 了解更多信息。
-
+---
+title: "欢迎使用 PPage"
+date: "2025-12-31"
+description: "开始使用 PPage 搭建你的个人主页"
+tags:
+  - "PPage"
+  - "开始"
 ---
 
-## 下一步
+# 欢迎使用 PPage
 
-尝试编辑 `config.yml` 文件来定制你的个人主页，或者在 `content/posts/` 目录下创建新的 Markdown 文章。
+这是一个示例博客文章。请在此处填写你的内容。
 
-祝你使用愉快！🎉
+## 如何使用
+
+1. 编辑 `config.yml` 配置文件，填写你的个人信息
+2. 在 `content/posts/` 目录下创建新的 Markdown 文件来写博客
+3. 在 `content/pages/` 目录下创建页面内容
+4. 在 `content/files/` 目录下放置需要展示的文件
+
+## 开始创作
+
+删除这个文件，开始创作你自己的内容吧！
