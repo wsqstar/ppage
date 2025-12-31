@@ -135,4 +135,13 @@ export const en = {
       reject: 'Rejected',
     },
   },
+
+  // Document Center Component
+  documentCenter: {
+    title: 'Documentation',
+    navigation: 'Navigation',
+    count: '{count} documents in total',
+    empty: 'No documents',
+    selectDocument: 'Please select a document',
+  },
 };

@@ -135,4 +135,13 @@ export const zh = {
       reject: '被拒',
     },
   },
+
+  // 文档中心组件
+  documentCenter: {
+    title: '文档中心',
+    navigation: '导航',
+    count: '共 {count} 个文档',
+    empty: '暂无文档',
+    selectDocument: '请选择一个文档',
+  },
 };

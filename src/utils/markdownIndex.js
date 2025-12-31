@@ -18,7 +18,7 @@ const pagesModules = import.meta.glob('../../content/pages/**/*.md', { eager: fa
  * @param {string} filename - 文件名（作为后备）
  * @returns {string} 提取的标题
  */
-function extractTitle(content, filename) {
+export function extractTitle(content, filename) {
   // 1. 尝试从 YAML front matter 中提取 title
   const frontMatterMatch = content.match(/^---\s*\n([\s\S]*?)\n---/);
   if (frontMatterMatch) {
