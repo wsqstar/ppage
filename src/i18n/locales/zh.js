@@ -86,6 +86,14 @@ export const zh = {
     en: 'English',
   },
 
+  // 主题
+  theme: {
+    light: '明亮',
+    dark: '暗黑',
+    academic: '学术',
+    glass: '透明艺术',
+  },
+
   // 新闻/动态页面
   news: {
     title: '最新动态',

@@ -5,6 +5,7 @@ import { useThemeConfig } from '../../config/ConfigContext';
 import '../../themes/light.css';
 import '../../themes/dark.css';
 import '../../themes/academic.css';
+import '../../themes/glass.css';
 
 const ThemeContext = createContext(null);
 

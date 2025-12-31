@@ -86,6 +86,14 @@ export const en = {
     en: 'English',
   },
 
+  // Themes
+  theme: {
+    light: 'Light',
+    dark: 'Dark',
+    academic: 'Academic',
+    glass: 'Glass Art',
+  },
+
   // News page
   news: {
     title: 'News & Updates',
