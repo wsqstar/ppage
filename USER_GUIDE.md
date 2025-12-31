@@ -236,10 +236,16 @@ deploy:
 deploy:
   repository: "https://github.com/yourusername/yourusername.github.io"
   branch: "main"  # 根域名部署通常使用 main 分支
+  customDomain: "yourdomain.com"  # 自定义域名（可选）
 
 # 2. 执行根域名部署（自动清理、构建、部署）
 ./scripts/deploy.sh root
 ```
+
+**关于 CNAME 文件**：
+- 如果配置了 `customDomain`，脚本会自动生成 `CNAME` 文件
+- 每次部署都会保留并更新 CNAME 文件
+- 无需手动管理 CNAME 文件
 
 #### 手动构建不同类型
 

@@ -33,6 +33,7 @@ fi
 # 使用 grep 和 sed 提取仓库地址
 REPOSITORY=$(grep -A 2 '^deploy:' public/config.yml | grep 'repository:' | sed 's/.*repository:[[:space:]]*["\x27]\{0,1\}\([^"\x27]*\)["\x27]\{0,1\}.*/\1/' | tr -d '\r')
 BRANCH=$(grep -A 2 '^deploy:' public/config.yml | grep 'branch:' | sed 's/.*branch:[[:space:]]*["\x27]\{0,1\}\([^"\x27]*\)["\x27]\{0,1\}.*/\1/' | tr -d '\r')
+CUSTOM_DOMAIN=$(grep -A 5 '^deploy:' public/config.yml | grep 'customDomain:' | awk -F: '{print $2}' | sed 's/[" ]//g' | cut -d'#' -f1 | tr -d '\r')
 
 # 如果没有读取到，使用默认值
 if [ -z "$REPOSITORY" ] || [ "$REPOSITORY" = "https://github.com/yourusername/ppage" ]; then
@@ -49,6 +50,12 @@ fi
 echo "✅ 仓库地址: $REPOSITORY"
 echo "✅ 部署分支: $BRANCH"
 
+if [ -n "$CUSTOM_DOMAIN" ]; then
+  echo "✅ 自定义域名: $CUSTOM_DOMAIN"
+else
+  echo "ℹ️  未配置自定义域名"
+fi
+
 # 1. 清理旧的构建产出
 if [ -d "dist" ]; then
   echo "🧹 清理旧的构建产出..."
@@ -58,6 +65,13 @@ fi
 # 2. 构建项目
 echo "📦 构建项目..."
 $BUILD_COMMAND
+
+# 2.5. 生成 CNAME 文件（如果配置了自定义域名）
+if [ -n "$CUSTOM_DOMAIN" ]; then
+  echo "🏷️  生成 CNAME 文件..."
+  echo "$CUSTOM_DOMAIN" > dist/CNAME
+  echo "✅ CNAME 文件已生成: $CUSTOM_DOMAIN"
+fi
 
 # 3. 进入构建产出目录
 cd dist
