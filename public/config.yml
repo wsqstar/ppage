@@ -6,19 +6,19 @@
 # ========================================
 site:
   title: "Shiqi Wang"
-  description: "【请填写】网站描述"
-  author: "【请填写】你的名字"
+  description: "This is my personal website."
+  author: "Shiqi Wang"
   baseUrl: "/"
 
 # ========================================
 # 个人信息
 # ========================================
 profile:
-  name: "【请填写】你的名字"
+  name: "Shiqi Wang"
   avatar: "/assets/images/avatar.jpg"  # 请将头像放在 public/assets/images/ 目录下
   bio: "【请填写】简短的个人介绍"
-  email: "【请填写】your.email@example.com"
-  location: "【请填写】城市, 国家"
+  email: "shiqi.wang@example.com"
+  location: "Guangzhou, China"
 
 # ========================================
 # 社交链接
@@ -26,7 +26,7 @@ profile:
 social:
   - name: "GitHub"
     icon: "github"
-    url: "【请填写】https://github.com/yourusername"
+    url: "https://github.com/wsqstar"
   - name: "Email"
     icon: "email"
     url: "【请填写】mailto:your.email@example.com"
@@ -56,7 +56,7 @@ navigation:
 # 主题配置
 # ========================================
 theme:
-  default: "light"  # 可选: light, dark, academic
+  default: "academicc  # 可选: light, dark, academic
   available:
     - "light"
     - "dark"
@@ -68,7 +68,7 @@ theme:
 # 语言配置
 # ========================================
 language:
-  default: "zh"  # zh(中文) 或 en(英文)
+  default: "en"  # zh(中文) 或 en(英文)
 
 # ========================================
 # 内容路径配置（通常不需要修改）
