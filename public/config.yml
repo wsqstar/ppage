@@ -97,7 +97,7 @@ files:
 projects:
   - name: "【请填写】项目名称"
     description: "【请填写】项目描述"
-    url: "【请填写】https://github.com/yourusername/project"
+    url: "https://github.com/wsqstar/ppage"
     tags:
       - "【请填写】标签1"
       - "【请填写】标签2"
@@ -106,7 +106,7 @@ projects:
 # 部署配置
 # ========================================
 deploy:
-  repository: "【请填写】https://github.com/yourusername/ppage"
+  repository: "https://github.com/wsqstar/ppage"
   branch: "gh-pages"
 
 # ========================================
