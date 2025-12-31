@@ -216,11 +216,16 @@ deploy:
   repository: "https://github.com/yourusername/ppage"
   branch: "gh-pages"
 
-# 2. 执行部署
+# 2. 执行部署（自动清理、构建、部署）
 ./scripts/deploy.sh
 # 或显式指定子目录模式
 ./scripts/deploy.sh subdir
 ```
+
+**注意**：`deploy.sh` 脚本会自动执行以下步骤：
+1. 🧹 清理旧的 `dist` 目录
+2. 📦 构建项目（使用正确的 base 路径）
+3. 📤 部署到 GitHub Pages
 
 #### 方式二：根域名部署
 
@@ -232,7 +237,7 @@ deploy:
   repository: "https://github.com/yourusername/yourusername.github.io"
   branch: "main"  # 根域名部署通常使用 main 分支
 
-# 2. 执行根域名部署
+# 2. 执行根域名部署（自动清理、构建、部署）
 ./scripts/deploy.sh root
 ```
 
