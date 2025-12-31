@@ -62,13 +62,26 @@ export function createMarkdownRenderer() {
 }
 
 /**
+ * 移除 Markdown 内容中的 YAML front matter
+ * @param {string} markdown - Markdown 文本
+ * @returns {string} 移除 front matter 后的 Markdown 文本
+ */
+export function removeFrontMatter(markdown) {
+  // 匹配 YAML front matter: ---\n...\n---
+  const frontMatterRegex = /^---\s*\n[\s\S]*?\n---\s*\n/;
+  return markdown.replace(frontMatterRegex, '');
+}
+
+/**
  * 渲染 Markdown 文本为 HTML
  * @param {string} markdown - Markdown 文本
  * @returns {string} HTML 字符串
  */
 export function renderMarkdown(markdown) {
+  // 移除 YAML front matter
+  const content = removeFrontMatter(markdown);
   const md = createMarkdownRenderer();
-  return md.render(markdown);
+  return md.render(content);
 }
 
 /**

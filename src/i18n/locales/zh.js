@@ -18,6 +18,7 @@ export const zh = {
     about: '关于',
     posts: '博客',
     projects: '项目',
+    docs: '文档',
     files: '文件',
     news: '动态',
   },
@@ -49,6 +50,17 @@ export const zh = {
     emptyHint: '在 content/posts/ 目录下添加 Markdown 文件即可自动发现',
     selectPost: '请选择一篇文章',
     loadError: '加载文章失败',
+  },
+
+  // 文档页面
+  pagesPage: {
+    title: '文档中心',
+    listTitle: '文档列表',
+    count: '共 {count} 个文档',
+    empty: '暂无文档',
+    emptyHint: '在 content/pages/ 目录下添加 Markdown 文件即可自动发现',
+    selectPage: '请选择一个文档',
+    loadError: '加载文档失败',
   },
 
   // 项目页面

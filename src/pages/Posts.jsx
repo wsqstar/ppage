@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { MarkdownRenderer } from '../components/markdown/MarkdownRenderer';
 import { loadAllMarkdownFiles } from '../utils/markdownIndex';
+import { filterMarkdownByLanguage } from '../utils/i18nMarkdown';
 import { useI18n } from '../i18n/I18nContext';
 import styles from './Posts.module.css';
 
@@ -14,11 +15,11 @@ export function Posts() {
   const [selectedPost, setSelectedPost] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const { t } = useI18n();
+  const { t, language } = useI18n(); // 获取当前语言
 
   useEffect(() => {
     loadPosts();
-  }, []);
+  }, [language]); // 语言变化时重新加载
 
   async function loadPosts() {
     try {
@@ -29,23 +30,27 @@ export function Posts() {
       const allMarkdownFiles = await loadAllMarkdownFiles();
       
       // 只获取 posts 类型的文件
-      const postFiles = allMarkdownFiles
-        .filter(file => file.type === 'post')
-        .map(file => ({
-          name: file.path.split('/').pop(),
-          title: file.title,
-          path: file.path,
-          content: file.content
-        }));
+      const postFiles = allMarkdownFiles.filter(file => file.type === 'post');
       
-      console.log(`自动发现 ${postFiles.length} 篇博客文章`);
-      setPosts(postFiles);
+      // 根据当前语言过滤文件
+      const filteredPosts = filterMarkdownByLanguage(postFiles, language, 'zh');
+      
+      // 转换为文章数据格式
+      const formattedPosts = filteredPosts.map(file => ({
+        name: file.path.split('/').pop(),
+        title: file.title,
+        path: file.path,
+        content: file.content
+      }));
+      
+      console.log(`当前语言: ${language}, 自动发现 ${formattedPosts.length} 篇博客文章`);
+      setPosts(formattedPosts);
       
       // 默认加载第一篇文章
-      if (postFiles.length > 0) {
+      if (formattedPosts.length > 0) {
         setSelectedPost({
-          path: postFiles[0].path,
-          content: postFiles[0].content
+          path: formattedPosts[0].path,
+          content: formattedPosts[0].content
         });
       }
     } catch (err) {

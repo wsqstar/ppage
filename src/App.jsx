@@ -8,6 +8,7 @@ import { Home } from './pages/Home';
 import { About } from './pages/About';
 import { Projects } from './pages/Projects';
 import { Posts } from './pages/Posts';
+import { Pages } from './pages/Pages';
 import { Files } from './pages/Files';
 import { News } from './pages/News';
 
@@ -34,6 +35,7 @@ function AppContent() {
               <Route path="about" element={<About />} />
               <Route path="projects" element={<Projects />} />
               <Route path="posts" element={<Posts />} />
+              <Route path="pages" element={<Pages />} />
               <Route path="files" element={<Files />} />
               <Route path="news" element={<News />} />
             </Route>

@@ -37,6 +37,8 @@ navigation:
     path: "/projects"
   - name: "博客"
     path: "/posts"
+  - name: "文档"
+    path: "/pages"
   - name: "文件"
     path: "/files"
   - name: "动态"
