@@ -96,28 +96,35 @@ export function NewsTimeline({ limit = 5 }) {
               </div>
               
               <div className={styles.newsCard}>
-                <div className={styles.newsHeader}>
-                  <span className={`${styles.typeTag} ${getTypeClassName(item.type)}`}>
-                    {t(`news.types.${item.type}`)}
-                  </span>
-                  {item.status && (
-                    <span className={`${styles.statusTag} ${getStatusClassName(item.status)}`}>
-                      {t(`news.status.${item.status}`)}
+                <div className={styles.cardHeader}>
+                  <div className={styles.leftSection}>
+                    <span className={`${styles.typeTag} ${getTypeClassName(item.type)}`}>
+                      {t(`news.types.${item.type}`)}
                     </span>
-                  )}
+                    {item.status && (
+                      <span className={`${styles.statusTag} ${getStatusClassName(item.status)}`}>
+                        {t(`news.status.${item.status}`)}
+                      </span>
+                    )}
+                  </div>
+                  
+                  <div className={styles.rightSection}>
+                    {item.location && <span className={styles.metaItem}>📍 {item.location}</span>}
+                    {item.venue && <span className={styles.metaItem}>🏛️ {item.venue}</span>}
+                    {item.tags && item.tags.length > 0 && (
+                      <div className={styles.inlineTags}>
+                        {item.tags.map((tag, tagIndex) => (
+                          <span key={tagIndex} className={styles.tag}>{tag}</span>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 </div>
                 
                 <h3 className={styles.newsTitle}>{item.title}</h3>
                 
                 {item.description && (
                   <p className={styles.newsDescription}>{item.description}</p>
-                )}
-                
-                {(item.location || item.venue) && (
-                  <div className={styles.meta}>
-                    {item.location && <span>📍 {item.location}</span>}
-                    {item.venue && <span>🏛️ {item.venue}</span>}
-                  </div>
                 )}
               </div>
             </div>

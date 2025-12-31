@@ -8,7 +8,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .title {
@@ -21,7 +21,7 @@
 .viewAll {
   color: var(--accent-color);
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 500;
   transition: opacity 0.2s ease;
 }
@@ -31,52 +31,52 @@
   text-decoration: underline;
 }
 
-/* 时间轴容器 */
+/* 时间轴容器 - 减小左侧间距 */
 .timeline {
   position: relative;
-  padding-left: 2rem;
+  padding-left: 1.5rem;
 }
 
 .timeline::before {
   content: '';
   position: absolute;
-  left: 0.75rem;
+  left: 0.5rem;
   top: 0;
   bottom: 0;
   width: 2px;
   background: var(--border-color);
 }
 
-/* 时间轴项目 */
+/* 时间轴项目 - 减少垂直间距 */
 .timelineItem {
   position: relative;
-  margin-bottom: 1.5rem;
-  padding-bottom: 1rem;
+  margin-bottom: 0.8rem;
+  padding-bottom: 0.4rem;
 }
 
 .timelineItem:last-child {
   margin-bottom: 0;
 }
 
-/* 时间轴标记点 */
+/* 时间轴标记点 - 减小尺寸 */
 .timelineMarker {
   position: absolute;
-  left: -2rem;
-  top: 0.3rem;
+  left: -1.5rem;
+  top: 0.15rem;
 }
 
 .dot {
-  width: 1rem;
-  height: 1rem;
+  width: 0.7rem;
+  height: 0.7rem;
   border-radius: 50%;
-  border: 3px solid var(--bg-primary);
+  border: 2px solid var(--bg-primary);
   background: var(--accent-color);
   box-shadow: 0 0 0 2px var(--border-color);
   transition: all 0.3s ease;
 }
 
 .timelineItem:hover .dot {
-  transform: scale(1.1);
+  transform: scale(1.15);
 }
 
 /* 不同类型的标记点颜色 */
@@ -122,66 +122,112 @@
 
 /* 时间轴内容 */
 .timelineContent {
-  margin-left: 0.5rem;
+  margin-left: 0.3rem;
 }
 
-/* 日期标签 */
+/* 日期标签 - 减小字体和间距 */
 .dateLabel {
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   font-weight: 600;
   color: var(--text-secondary);
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.25rem;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.4rem;
 }
 
 .futureBadge {
-  font-size: 0.7rem;
-  padding: 0.15rem 0.4rem;
+  font-size: 0.6rem;
+  padding: 0.15rem 0.35rem;
   background: var(--accent-color);
   color: white;
-  border-radius: 0.25rem;
+  border-radius: 0.2rem;
   font-weight: 500;
 }
 
-/* 新闻卡片 */
+/* 新闻卡片 - 更紧凑 */
 .newsCard {
   background: var(--bg-secondary);
   border: 1px solid var(--border-color);
-  border-radius: 0.4rem;
-  padding: 1rem;
+  border-radius: 0.35rem;
+  padding: 0.6rem 0.9rem;
   transition: all 0.2s ease;
 }
 
 .newsCard:hover {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   transform: translateY(-1px);
 }
 
-/* 新闻头部 */
-.newsHeader {
+/* 新闻头部 - 水平布局 */
+.cardHeader {
   display: flex;
-  gap: 0.4rem;
-  margin-bottom: 0.5rem;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.4rem;
   flex-wrap: wrap;
 }
 
-/* 类型和状态标签 */
+.leftSection {
+  display: flex;
+  gap: 0.35rem;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.rightSection {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+/* 元信息项 */
+.metaItem {
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+/* 内联标签 */
+.inlineTags {
+  display: inline-flex;
+  gap: 0.25rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* 类型和状态标签 - 更小 */
 .typeTag,
 .statusTag {
   display: inline-block;
-  padding: 0.2rem 0.6rem;
+  padding: 0.12rem 0.45rem;
   border-radius: 0.2rem;
-  font-size: 0.7rem;
+  font-size: 0.6rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
+  line-height: 1.3;
 }
 
 .typeTag {
   background: var(--accent-color);
   color: white;
+}
+
+/* 标签 - 更小更紧凑 */
+.tag {
+  padding: 0.12rem 0.35rem;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 0.15rem;
+  font-size: 0.65rem;
+  color: var(--text-secondary);
+  line-height: 1.2;
+  white-space: nowrap;
 }
 
 /* 论文状态样式 */
@@ -210,41 +256,28 @@
   color: white;
 }
 
-/* 新闻标题 */
+/* 新闻标题 - 减小字体 */
 .newsTitle {
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 600;
   color: var(--text-primary);
-  margin: 0 0 0.4rem 0;
-  line-height: 1.4;
+  margin: 0 0 0.3rem 0;
+  line-height: 1.35;
 }
 
-/* 新闻描述 */
+/* 新闻描述 - 减小字体 */
 .newsDescription {
   color: var(--text-secondary);
-  line-height: 1.5;
+  line-height: 1.45;
   margin: 0;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
 }
 
-/* 元信息 */
-.meta {
-  display: flex;
-  gap: 1rem;
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-  margin-top: 0.5rem;
-}
-
-.meta span {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
-}
+/* 元信息 - 已整合到 metaItem */
 
 /* 未来事件和过去事件的区分 */
 .futureEvent .newsCard {
-  border-left: 3px solid var(--accent-color);
+  border-left: 2.5px solid var(--accent-color);
 }
 
 .pastEvent {
@@ -256,41 +289,50 @@
   .header {
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.5rem;
+    gap: 0.4rem;
   }
 
   .timeline {
-    padding-left: 1.5rem;
+    padding-left: 1.2rem;
   }
 
   .timeline::before {
-    left: 0.5rem;
+    left: 0.4rem;
   }
 
   .timelineMarker {
-    left: -1.5rem;
+    left: -1.2rem;
   }
 
   .dot {
-    width: 0.75rem;
-    height: 0.75rem;
+    width: 0.6rem;
+    height: 0.6rem;
     border-width: 2px;
   }
 
   .newsCard {
-    padding: 0.8rem;
+    padding: 0.5rem 0.7rem;
   }
 
   .newsTitle {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
 
   .newsDescription {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
   }
 
-  .meta {
+  .cardHeader {
     flex-direction: column;
-    gap: 0.25rem;
+    align-items: flex-start;
+  }
+
+  .rightSection {
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .metaItem {
+    font-size: 0.65rem;
   }
 }
