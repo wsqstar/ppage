@@ -12,11 +12,14 @@ import { Files } from './pages/Files';
 import { News } from './pages/News';
 
 function App() {
+  // 获取 Vite 配置的基础路径，支持子目录部署
+  const basename = import.meta.env.BASE_URL || '/';
+  
   return (
     <ConfigProvider>
       <I18nProvider>
         <ThemeProvider>
-          <BrowserRouter>
+          <BrowserRouter basename={basename}>
             <Routes>
               <Route path="/" element={<Layout />}>
                 <Route index element={<Home />} />

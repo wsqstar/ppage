@@ -31,14 +31,12 @@ git commit -m "deploy: 更新站点 $(date '+%Y-%m-%d %H:%M:%S')" || echo "没�
 
 # 6. 推送到 GitHub
 echo "📤 推送到 GitHub..."
-# 注意：请将 <USERNAME> 和 <REPO> 替换为你的 GitHub 用户名和仓库名
-# git push -f git@github.com:<USERNAME>/<REPO>.git gh-pages
+git remote add origin https://github.com/mappedinfo/ppage.git 2>/dev/null || true
+git remote set-url origin https://github.com/mappedinfo/ppage.git
+git push -f origin gh-pages
 
-echo "✅ 构建完成！"
+echo "✅ 部署完成！"
 echo "📁 产出目录: dist/"
-echo ""
-echo "⚠️  注意：请手动配置远程仓库地址并推送"
-echo "   git remote add origin git@github.com:<USERNAME>/<REPO>.git"
-echo "   git push -f origin gh-pages"
+echo "🌐 请访问: https://mappedinfo.github.io/ppage/"
 
 cd ..
