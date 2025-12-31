@@ -49,6 +49,7 @@ theme:
     - "light"
     - "dark"
     - "academic"
+    - "glass"
 
 # 语言配置
 language:
