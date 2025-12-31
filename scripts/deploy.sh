@@ -49,29 +49,35 @@ fi
 echo "✅ 仓库地址: $REPOSITORY"
 echo "✅ 部署分支: $BRANCH"
 
-# 1. 构建项目
+# 1. 清理旧的构建产出
+if [ -d "dist" ]; then
+  echo "🧹 清理旧的构建产出..."
+  rm -rf dist
+fi
+
+# 2. 构建项目
 echo "📦 构建项目..."
 $BUILD_COMMAND
 
-# 2. 进入构建产出目录
+# 3. 进入构建产出目录
 cd dist
 
-# 3. 初始化 git 仓库（如果还没有）
+# 4. 初始化 git 仓库（如果还没有）
 if [ ! -d ".git" ]; then
   echo "🔧 初始化 Git 仓库..."
   git init
   git checkout -b gh-pages
 fi
 
-# 4. 添加所有文件
+# 5. 添加所有文件
 echo "📝 添加文件..."
 git add -A
 
-# 5. 提交
+# 6. 提交
 echo "💾 提交更改..."
 git commit -m "deploy: 更新站点 $(date '+%Y-%m-%d %H:%M:%S')" || echo "没有更改需要提交"
 
-# 6. 推送到 GitHub
+# 7. 推送到 GitHub
 echo "📤 推送到 $REPOSITORY ..."
 git remote add origin "$REPOSITORY" 2>/dev/null || true
 git remote set-url origin "$REPOSITORY"

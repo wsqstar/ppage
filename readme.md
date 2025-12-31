@@ -82,7 +82,7 @@ PPage 支持两种部署方式，自动适配不同的访问路径：
 
 ```bash
 # 1. 配置 public/config.yml 中的 deploy 信息
-# 2. 执行部署
+# 2. 执行部署（自动清理、构建、部署）
 ./scripts/deploy.sh
 ```
 
@@ -92,7 +92,7 @@ PPage 支持两种部署方式，自动适配不同的访问路径：
 
 ```bash
 # 1. 配置 public/config.yml 中的 deploy 信息
-# 2. 执行根域名部署
+# 2. 执行根域名部署（自动清理、构建、部署）
 ./scripts/deploy.sh root
 ```
 

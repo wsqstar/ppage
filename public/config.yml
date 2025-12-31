@@ -98,6 +98,7 @@ projects:
 
 # 部署配置
 # 重要：请修改为你自己的仓库地址！
+# 对于自定义域名 shiqi-wang.com，建议使用根路径部署
 deploy:
   repository: "https://github.com/mappedinfo/ppage"  # 请修改为你的 GitHub 仓库地址
   branch: "gh-pages"  # 部署分支，默认 gh-pages
