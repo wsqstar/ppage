@@ -5,7 +5,7 @@
 # 站点基本信息
 # ========================================
 site:
-  title: "【请填写】你的网站标题"
+  title: "Shiqi Wang"
   description: "【请填写】网站描述"
   author: "【请填写】你的名字"
   baseUrl: "/"
