@@ -56,7 +56,7 @@ navigation:
 # 主题配置
 # ========================================
 theme:
-  default: "academicc  # 可选: light, dark, academic
+  default: "academic“  # 可选: light, dark, academic
   available:
     - "light"
     - "dark"
