@@ -3,13 +3,23 @@
  * 使用 Vite 的 import.meta.glob 自动发现所有 Markdown 文件
  */
 
-// 使用 Vite 的 glob 导入功能
-// 注意：必须使用 eager: true 来同步加载，或者使用绝对路径
-// 开发环境中，content 目录通过 vite-plugin-static-copy 插件复制到 public
-// 因此我们需要使用 fetch 来加载这些文件，而不是 import.meta.glob
-// 这里先用 glob 获取文件列表，然后用 fetch 加载内容
-const postsModules = import.meta.glob('../../content/posts/**/*.md', { eager: false });
-const pagesModules = import.meta.glob('../../content/pages/**/*.md', { eager: false });
+import { getAllMarkdownModules } from './folderScanner';
+
+// 使用文件夹扫描器获取所有 Markdown 模块
+const allModules = getAllMarkdownModules();
+
+// 为了向后兼容，保留原有的 posts 和 pages 模块导出
+const postsModules = {};
+const pagesModules = {};
+
+// 分类文件到 posts 和 pages
+for (const path in allModules) {
+  if (path.includes('/posts/')) {
+    postsModules[path] = allModules[path];
+  } else if (path.includes('/pages/')) {
+    pagesModules[path] = allModules[path];
+  }
+}
 
 /**
  * 从 Markdown 内容中提取标题
@@ -129,4 +139,53 @@ export function getMarkdownFileList() {
   });
   
   return fileList;
+}
+
+/**
+ * 从路径中提取文件夹名称
+ * @param {string} path - 文件路径
+ * @returns {string|null} 文件夹名称
+ */
+function extractFolderFromPath(path) {
+  const match = path.match(/\.\.\/\.\.\/content\/([^\/]+)\//); 
+  return match ? match[1] : null;
+}
+
+/**
+ * 加载指定文件夹的所有 Markdown 文件
+ * @param {string} folderName - 文件夹名称
+ * @returns {Promise<Array>} Markdown 文件数组
+ */
+export async function loadFolderMarkdownFiles(folderName) {
+  const markdownFiles = [];
+  
+  for (const path in allModules) {
+    const folder = extractFolderFromPath(path);
+    if (folder !== folderName) continue;
+    
+    try {
+      const absolutePath = path.replace('../..', '');
+      const filename = path.split('/').pop();
+      
+      const response = await fetch(absolutePath);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const content = await response.text();
+      
+      const title = extractTitle(content, filename);
+      
+      markdownFiles.push({
+        path: absolutePath,
+        content,
+        title,
+        type: 'page', // 默认类型
+        folder: folderName
+      });
+    } catch (error) {
+      console.error(`加载文件失败: ${path}`, error);
+    }
+  }
+  
+  return markdownFiles;
 }

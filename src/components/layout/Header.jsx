@@ -30,10 +30,20 @@ function getNavigationLabel(path, t) {
 /**
  * 页面头部导航组件
  */
-export function Header() {
+export function Header({ folderConfigs = [] }) {
   const navigation = useNavigationConfig();
   const siteConfig = useSiteConfig();
   const { t } = useI18n();
+  
+  // 合并静态导航和动态生成的导航
+  const allNavigation = [
+    ...navigation,
+    ...folderConfigs.map(config => ({
+      name: config.title,
+      path: `/${config.name}`,
+      isDynamic: true
+    }))
+  ];
 
   return (
     <header className={styles.header}>
@@ -43,13 +53,13 @@ export function Header() {
         </Link>
 
         <nav className={styles.nav}>
-          {navigation.map((item) => (
+          {allNavigation.map((item) => (
             <Link 
               key={item.path} 
               to={item.path} 
               className={styles.navLink}
             >
-              {getNavigationLabel(item.path, t)}
+              {item.isDynamic ? item.name : getNavigationLabel(item.path, t)}
             </Link>
           ))}
         </nav>

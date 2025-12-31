@@ -20,7 +20,10 @@ export function extractMetadata(content) {
     author: null,
     tags: [],
     category: null,
-    id: null
+    id: null,
+    pinned: false,
+    sticky: false,
+    priority: 0
   };
 
   // 提取 YAML front matter
@@ -61,6 +64,15 @@ export function extractMetadata(content) {
         break;
       case 'id':
         metadata.id = value.replace(/^["']|["']$/g, '');
+        break;
+      case 'pinned':
+        metadata.pinned = value === 'true' || value === true;
+        break;
+      case 'sticky':
+        metadata.sticky = value === 'true' || value === true;
+        break;
+      case 'priority':
+        metadata.priority = parseInt(value, 10) || 0;
         break;
       case 'tags':
         // 处理标签数组：可能是 [tag1, tag2] 或 YAML 数组格式
@@ -140,11 +152,24 @@ export function sortDocuments(documents, sortBy = 'order') {
   
   switch (sortBy) {
     case 'order':
-      // 按 order 字段排序，没有 order 的放在后面
+      // 智能排序：置顶 > 优先级 > order > 文件名
       return docs.sort((a, b) => {
+        // 1. 置顶文件优先（pinned 或 sticky）
+        const aPinned = a.metadata?.pinned || a.metadata?.sticky || false;
+        const bPinned = b.metadata?.pinned || b.metadata?.sticky || false;
+        if (aPinned !== bPinned) return bPinned - aPinned;
+        
+        // 2. 按优先级排序
+        const aPriority = a.metadata?.priority || 0;
+        const bPriority = b.metadata?.priority || 0;
+        if (aPriority !== bPriority) return bPriority - aPriority;
+        
+        // 3. 按 order 字段排序
         const orderA = a.order ?? Infinity;
         const orderB = b.order ?? Infinity;
         if (orderA !== orderB) return orderA - orderB;
+        
+        // 4. 按标题字母顺序排序
         return a.title.localeCompare(b.title);
       });
       

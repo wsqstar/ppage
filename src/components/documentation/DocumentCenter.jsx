@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { MarkdownRenderer } from '../markdown/MarkdownRenderer';
-import { loadAllMarkdownFiles } from '../../utils/markdownIndex';
+import { loadAllMarkdownFiles, loadFolderMarkdownFiles } from '../../utils/markdownIndex';
 import { filterMarkdownByLanguage } from '../../utils/i18nMarkdown';
 import { useI18n } from '../../i18n/I18nContext';
 import { 
@@ -60,7 +60,14 @@ export function DocumentCenter({
       setError(null);
       
       // 1. 加载所有 Markdown 文件
-      let allFiles = await loadAllMarkdownFiles();
+      let allFiles;
+      
+      // 如果指定了 collection，尝试直接加载该文件夹
+      if (collection && type === 'all') {
+        allFiles = await loadFolderMarkdownFiles(collection);
+      } else {
+        allFiles = await loadAllMarkdownFiles();
+      }
       
       // 2. 根据类型过滤
       if (type !== 'all') {
@@ -69,7 +76,13 @@ export function DocumentCenter({
       
       // 3. 根据集合过滤
       if (collection) {
-        allFiles = allFiles.filter(file => file.collection === collection);
+        allFiles = allFiles.filter(file => {
+          // 检查 front matter 中的 collection 字段
+          if (file.collection === collection) return true;
+          // 检查文件夹名称
+          if (file.folder === collection) return true;
+          return false;
+        });
       }
       
       // 4. 根据语言过滤
