@@ -22,6 +22,7 @@ export const zh = {
     files: '文件',
     news: '动态',
     tutorials: '教程中心',
+    development: '开发指南',
   },
 
   // 首页

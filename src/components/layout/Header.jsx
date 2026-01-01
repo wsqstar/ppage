@@ -23,6 +23,7 @@ function getNavigationLabel(path, t) {
     '/files': 'pages.files',
     '/news': 'pages.news',
     '/tutorials': 'pages.tutorials',
+    '/development': 'pages.development',
   }
 
   return t(pathToI18nKey[path]) || path
@@ -41,12 +42,18 @@ export function Header({ folderConfigs = [] }) {
     ...navigation,
     ...folderConfigs
       .filter(config => config.showInNavigation !== false) // 过滤不显示的项
-      .map(config => ({
-        name: config.title,
-        path: `/${config.name}`,
-        isDynamic: true,
-        showInMobile: config.showInMobile ?? false, // 使用 config 中的配置
-      })),
+      .map(config => {
+        // 尝试使用 i18n 翻译，如果没有则使用 index.md 中的 title
+        const i18nKey = `pages.${config.name}`
+        const translatedTitle = t(i18nKey)
+
+        return {
+          name: translatedTitle === i18nKey ? config.title : translatedTitle,
+          path: `/${config.name}`,
+          isDynamic: true,
+          showInMobile: config.showInMobile ?? false, // 使用 config 中的配置
+        }
+      }),
   ]
 
   // 分离移动端显示和汉堡菜单中的导航项

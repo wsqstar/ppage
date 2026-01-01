@@ -1,6 +1,7 @@
 ---
 title: 开发指南
 description: PPage 开发相关文档中心
+type: page
 order: 0
 isPinned: true
 showInDocumentCenter: true
@@ -20,8 +21,8 @@ showInDocumentCenter: true
 
 如果你是第一次参与 PPage 开发，建议按以下顺序阅读：
 
-1. 先阅读项目根目录的 [README.md](../../../readme.md) 了解项目概况
-2. 查看 [基础教程](../basic/) 了解如何使用 PPage
+1. 先阅读项目根目录的 README.md 了解项目概况
+2. 查看 [基础教程](/tutorials) 了解如何使用 PPage
 3. 阅读本开发指南了解开发流程
 
 ## 🔧 开发环境

@@ -70,6 +70,7 @@ content:
 
 # 文档集合配置
 # 控制哪些文件夹被自动扫描和显示
+# 注意：这里配置的是 content/ 目录下的顶级文件夹
 # enabled: true 表示启用此文件夹的自动扫描
 # enabled: false 表示禁用,该文件夹不会出现在导航中
 collections:

@@ -1,6 +1,9 @@
 ---
 title: GitHub Release 发布指南
 description: 详细介绍如何在 GitHub 上发布新版本
+id: release-guide
+type: page
+collection: development
 parent: 开发指南
 order: 1
 showInDocumentCenter: true
