@@ -28,21 +28,29 @@ social:
     url: "https://twitter.com/yourusername"
 
 # 导航菜单
+# showInMobile: 控制在移动端是否默认显示(false则放入汉堡菜单)
 navigation:
   - name: "首页"
     path: "/"
+    showInMobile: true  # 始终显示
   - name: "关于"
     path: "/about"
+    showInMobile: true  # 始终显示
   - name: "项目"
     path: "/projects"
+    showInMobile: false  # 放入汉堡菜单
   - name: "博客"
     path: "/posts"
+    showInMobile: false  # 放入汉堡菜单
   - name: "文档"
     path: "/pages"
+    showInMobile: false  # 放入汉堡菜单
   - name: "文件"
     path: "/files"
+    showInMobile: false  # 放入汉堡菜单
   - name: "动态"
     path: "/news"
+    showInMobile: false  # 放入汉堡菜单
 
 # 主题配置
 theme:
@@ -59,6 +67,23 @@ content:
   pagesPath: "/content/pages"
   filesPath: "/content/files"  # PDF 和文档文件目录
   assetsPath: "/assets"         # 网站资源（图片、图标等）
+
+# 文档集合配置
+# 控制哪些文件夹被自动扫描和显示
+# enabled: true 表示启用此文件夹的自动扫描
+# enabled: false 表示禁用,该文件夹不会出现在导航中
+collections:
+  tutorials:
+    enabled: true           # 是否启用教程中心
+    showInNavigation: true  # 是否在导航栏显示
+    showInMobile: false     # 移动端是否直接显示(false则放入汉堡菜单)
+    order: 1                # 导航顺序
+  # 可以添加更多自定义文档集合
+  # guides:
+  #   enabled: false
+  #   showInNavigation: true
+  #   showInMobile: false
+  #   order: 2
 
 # 文件配置
 # 支持两种方式：

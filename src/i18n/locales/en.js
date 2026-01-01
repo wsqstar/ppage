@@ -21,6 +21,7 @@ export const en = {
     docs: 'Docs',
     files: 'Files',
     news: 'News',
+    tutorials: 'Tutorials',
   },
 
   // Home page
@@ -38,7 +39,8 @@ export const en = {
     contactTitle: 'Contact',
     emailLabel: 'Email',
     siteTitle: 'About This Site',
-    siteDescription: 'This site is built with PPage, a pure frontend personal homepage generation system. It supports quick setup through YAML configuration files, Markdown content creation, multiple theme switching, and deployment on GitHub Pages.',
+    siteDescription:
+      'This site is built with PPage, a pure frontend personal homepage generation system. It supports quick setup through YAML configuration files, Markdown content creation, multiple theme switching, and deployment on GitHub Pages.',
   },
 
   // Blog page
@@ -47,7 +49,8 @@ export const en = {
     listTitle: 'Post List',
     count: '{count} posts in total',
     empty: 'No blog posts',
-    emptyHint: 'Add Markdown files to content/posts/ directory for auto-discovery',
+    emptyHint:
+      'Add Markdown files to content/posts/ directory for auto-discovery',
     selectPost: 'Please select a post',
     loadError: 'Failed to load post',
   },
@@ -58,7 +61,8 @@ export const en = {
     listTitle: 'Document List',
     count: '{count} documents in total',
     empty: 'No documents',
-    emptyHint: 'Add Markdown files to content/pages/ directory for auto-discovery',
+    emptyHint:
+      'Add Markdown files to content/pages/ directory for auto-discovery',
     selectPage: 'Please select a document',
     loadError: 'Failed to load document',
   },
@@ -144,4 +148,23 @@ export const en = {
     empty: 'No documents',
     selectDocument: 'Please select a document',
   },
-};
+
+  // Tutorials page
+  tutorials: {
+    title: 'Tutorials',
+    listTitle: 'Tutorial List',
+    count: '{count} tutorials in total',
+    empty: 'No tutorials',
+    emptyHint:
+      'Add Markdown files to content/tutorials/ directory for auto-discovery',
+    selectTutorial: 'Please select a tutorial',
+    loadError: 'Failed to load tutorial',
+    // Tutorial categories
+    categories: {
+      gettingStarted: 'Getting Started',
+      basic: 'Basic',
+      advanced: 'Advanced',
+      deployment: 'Deployment',
+    },
+  },
+}

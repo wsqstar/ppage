@@ -180,17 +180,27 @@ export async function loadFolderIndex(folderName) {
 
 /**
  * 生成完整的文件夹配置
- * 结合扫描结果和 index.md 配置
+ * 结合扫描结果、index.md 配置和 config.yml 配置
+ * @param {Object} siteConfig - 站点配置对象
  * @returns {Promise<Array<Object>>} 文件夹配置数组
  */
-export async function generateFolderConfigs() {
+export async function generateFolderConfigs(siteConfig = {}) {
   const folders = scanContentFolders()
   const configs = []
+  const collections = siteConfig.collections || {}
 
   for (const folder of folders) {
+    // 检查此文件夹是否在 config 中配置
+    const collectionConfig = collections[folder.name] || {}
+
+    // 如果明确设置为 disabled，则跳过
+    if (collectionConfig.enabled === false) {
+      continue
+    }
+
     const indexConfig = await loadFolderIndex(folder.name)
 
-    // 合并配置
+    // 合并配置：优先级 config.yml > index.md > 默认值
     const config = {
       name: folder.name,
       title: indexConfig?.title || formatFolderName(folder.name),
@@ -201,9 +211,12 @@ export async function generateFolderConfigs() {
       showBreadcrumb: indexConfig?.showBreadcrumb || false,
       layout: indexConfig?.layout || 'sidebar',
       icon: indexConfig?.icon || null,
-      order: indexConfig?.order || 999,
+      order: collectionConfig.order ?? indexConfig?.order ?? 999,
       fileCount: folder.fileCount,
       hasIndex: !!indexConfig,
+      // 从 config.yml 添加的配置
+      showInNavigation: collectionConfig.showInNavigation ?? true,
+      showInMobile: collectionConfig.showInMobile ?? false,
     }
 
     configs.push(config)
