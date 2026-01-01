@@ -89,6 +89,11 @@ if [ -n "$CUSTOM_DOMAIN" ]; then
   echo "✅ CNAME 文件已生成: $CUSTOM_DOMAIN"
 fi
 
+# 2.6. 添加 .nojekyll 文件（禁用 Jekyll 处理）
+echo "📄 添加 .nojekyll 文件..."
+touch dist/.nojekyll
+echo "✅ .nojekyll 文件已生成（禁用 Jekyll，确保所有文件正确部署）"
+
 # 3. 进入构建产出目录
 cd dist
 

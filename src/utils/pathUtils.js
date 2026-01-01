@@ -5,7 +5,7 @@
 
 /**
  * 获取当前应用的基础路径
- * 通过解析当前页面 URL 和 index.html 的位置来推断
+ * 通过检测 script 标签的 src 属性来推断部署路径
  *
  * 例如：
  * - 部署在根路径: https://example.com/ -> '/'
@@ -20,50 +20,68 @@ export function getBasePath() {
     return '/'
   }
 
-  // 生产环境：从当前页面的路径推断
+  // 生产环境：从 script 标签的 src 属性推断 base 路径
+  // 因为 Vite 构建时使用了相对路径，script src 会是 './assets/index-xxx.js'
+  // 我们需要从当前 URL 和 HTML 位置计算 base
+
   const pathname = window.location.pathname
 
-  // 如果路径是 '/' 或 '/index.html'，说明在根目录
+  console.log('[pathUtils] Detecting base path...')
+  console.log('[pathUtils] Current pathname:', pathname)
+
+  // 如果 pathname 是 '/' 或 '/index.html'，说明在根目录
   if (pathname === '/' || pathname === '/index.html') {
+    console.log('[pathUtils] Detected root deployment')
     return '/'
   }
 
-  // 如果路径包含多层目录，需要提取基础路径
-  // 例如: /ppage/index.html -> /ppage/
-  // 或: /ppage/about -> /ppage/
-  // 或: /projects/ppage/index.html -> /projects/ppage/
+  // 对于其他路径，需要区分 index.html 和 SPA 路由
 
-  // 移除 index.html
-  let base = pathname.replace(/\/index\.html$/, '')
-
-  // 移除路由路径（最后一个路径段）
-  // 如果不是以 .html 结尾，可能是 SPA 路由
-  if (!pathname.endsWith('.html')) {
-    // 获取最后一个 / 之前的部分
-    const lastSlashIndex = base.lastIndexOf('/', base.length - 2)
-    if (lastSlashIndex > 0) {
-      base = base.substring(0, lastSlashIndex)
-    } else {
-      base = ''
-    }
+  // 如果路径以 / 结尾且不包含 .html，可能是目录访问（如 /ppage/）
+  // 这是 index.html 所在的目录
+  if (pathname.endsWith('/') && !pathname.includes('.html')) {
+    console.log('[pathUtils] Detected directory access:', pathname)
+    return pathname
   }
 
-  // 确保以 / 结尾
-  if (base && !base.endsWith('/')) {
-    base += '/'
+  // 如果路径是 /ppage/index.html，提取 /ppage/
+  if (pathname.endsWith('/index.html')) {
+    const base = pathname.replace(/\/index\.html$/, '/')
+    console.log('[pathUtils] Detected index.html in subdirectory:', base)
+    return base
   }
 
-  // 确保以 / 开头
-  if (base && !base.startsWith('/')) {
-    base = '/' + base
+  // 对于 SPA 路由（如 /ppage/about），需要找到 index.html 所在的目录
+  // 这里我们假设 index.html 在第一层子目录（如 /ppage/）
+  const segments = pathname.split('/').filter(s => s)
+
+  console.log('[pathUtils] Path segments:', segments)
+
+  if (segments.length === 0) {
+    console.log('[pathUtils] No segments, assuming root')
+    return '/'
   }
 
-  return base || '/'
+  // 如果只有一层（如 /about），说明 index.html 在根目录
+  if (segments.length === 1) {
+    console.log(
+      '[pathUtils] Single segment, assuming root deployment with SPA route'
+    )
+    return '/'
+  }
+
+  // 如果有多层（如 /ppage/about 或 /projects/ppage/docs）
+  // 我们假设 index.html 在第一层子目录
+  const base = '/' + segments[0] + '/'
+  console.log('[pathUtils] Multiple segments, detected base:', base)
+  return base
 }
 
 /**
  * 获取静态资源的完整路径
  * 静态资源包括：config.yml, content 目录下的文件等
+ *
+ * 注意：使用绝对路径 + base 前缀的方式，确保资源正确加载
  *
  * @param {string} relativePath - 相对于 dist 根目录的路径，如 '/config.yml', '/content/pages/about.md'
  * @returns {string} 完整的资源路径
@@ -76,7 +94,7 @@ export function getAssetPath(relativePath) {
     ? relativePath.substring(1)
     : relativePath
 
-  // 拼接基础路径
+  // 拼接基础路径（绝对路径）
   return basePath + cleanPath
 }
 
