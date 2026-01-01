@@ -78,12 +78,17 @@ collections:
     showInNavigation: true  # 是否在导航栏显示
     showInMobile: false     # 移动端是否直接显示(false则放入汉堡菜单)
     order: 1                # 导航顺序
+  development:
+    enabled: true           # 是否启用开发文档
+    showInNavigation: true  # 是否在导航栏显示
+    showInMobile: false     # 移动端是否直接显示(false则放入汉堡菜单)
+    order: 2                # 导航顺序
   # 可以添加更多自定义文档集合
   # guides:
   #   enabled: false
   #   showInNavigation: true
   #   showInMobile: false
-  #   order: 2
+  #   order: 3
 
 # 文件配置
 # 支持两种方式：
