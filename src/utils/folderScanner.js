@@ -188,12 +188,20 @@ export async function generateFolderConfigs(siteConfig = {}) {
   const configs = []
   const collections = siteConfig.collections || {}
 
+  console.log('[folderScanner] collections config:', collections)
+
   for (const folder of folders) {
     // 检查此文件夹是否在 config 中配置
     const collectionConfig = collections[folder.name] || {}
 
+    console.log(
+      `[folderScanner] Processing folder: ${folder.name}, enabled:`,
+      collectionConfig.enabled
+    )
+
     // 如果明确设置为 disabled，则跳过
     if (collectionConfig.enabled === false) {
+      console.log(`[folderScanner] Skipping ${folder.name} (enabled=false)`)
       continue
     }
 

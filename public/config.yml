@@ -74,7 +74,7 @@ content:
 # enabled: false 表示禁用,该文件夹不会出现在导航中
 collections:
   tutorials:
-    enabled: true           # 是否启用教程中心
+    enabled: false           # 是否启用教程中心
     showInNavigation: true  # 是否在导航栏显示
     showInMobile: false     # 移动端是否直接显示(false则放入汉堡菜单)
     order: 1                # 导航顺序
