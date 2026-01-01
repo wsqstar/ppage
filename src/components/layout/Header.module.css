@@ -40,6 +40,11 @@
   justify-content: center;
 }
 
+/* 移动端导航 - 默认隐藏 */
+.mobileNav {
+  display: none;
+}
+
 .navLink {
   color: var(--text-primary);
   text-decoration: none;
@@ -74,7 +79,14 @@
     font-size: var(--font-size-base);
   }
 
+  /* 桌面端导航在移动端隐藏 */
   .nav {
+    display: none;
+  }
+
+  /* 移动端导航在移动端显示 */
+  .mobileNav {
+    display: flex;
     flex-basis: 100%;
     order: 3;
     justify-content: flex-start;
@@ -87,25 +99,29 @@
     font-size: var(--font-size-sm);
     padding: var(--spacing-xs) var(--spacing-sm);
   }
+
+  .actions {
+    gap: var(--spacing-sm);
+  }
 }
 
 /* 玻璃主题增强 */
-[data-theme="glass"] .header {
+[data-theme='glass'] .header {
   background-color: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
 
-[data-theme="glass"] .navLink {
+[data-theme='glass'] .navLink {
   text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
 }
 
-[data-theme="glass"] .navLink:hover {
+[data-theme='glass'] .navLink:hover {
   background-color: rgba(255, 255, 255, 0.6);
   text-shadow: 0 1px 3px rgba(255, 255, 255, 0.9);
 }
 
-[data-theme="glass"] .logo {
+[data-theme='glass'] .logo {
   text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
 }

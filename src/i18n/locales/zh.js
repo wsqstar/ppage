@@ -21,6 +21,7 @@ export const zh = {
     docs: '文档',
     files: '文件',
     news: '动态',
+    tutorials: '教程中心',
   },
 
   // 首页
@@ -38,7 +39,8 @@ export const zh = {
     contactTitle: '联系方式',
     emailLabel: 'Email',
     siteTitle: '关于本站',
-    siteDescription: '本站点使用 PPage 构建，这是一个纯前端的个人主页生成系统，支持通过 YAML 配置文件快速搭建个人主页，支持 Markdown 内容创作，支持多种主题切换，部署在 GitHub Pages 上。',
+    siteDescription:
+      '本站点使用 PPage 构建，这是一个纯前端的个人主页生成系统，支持通过 YAML 配置文件快速搭建个人主页，支持 Markdown 内容创作，支持多种主题切换，部署在 GitHub Pages 上。',
   },
 
   // 博客页面
@@ -144,4 +146,22 @@ export const zh = {
     empty: '暂无文档',
     selectDocument: '请选择一个文档',
   },
-};
+
+  // 教程中心页面
+  tutorials: {
+    title: '教程中心',
+    listTitle: '教程列表',
+    count: '共 {count} 个教程',
+    empty: '暂无教程',
+    emptyHint: '在 content/tutorials/ 目录下添加 Markdown 文件即可自动发现',
+    selectTutorial: '请选择一个教程',
+    loadError: '加载教程失败',
+    // 教程分类
+    categories: {
+      gettingStarted: '快速入门',
+      basic: '基础教程',
+      advanced: '高级教程',
+      deployment: '部署指南',
+    },
+  },
+}

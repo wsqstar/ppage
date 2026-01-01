@@ -1,10 +1,10 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { useNavigationConfig, useSiteConfig } from '../../config/ConfigContext';
-import { ThemeSwitcher } from '../theme/ThemeSwitcher';
-import { LanguageSwitcher } from '../theme/LanguageSwitcher';
-import { useI18n } from '../../i18n/I18nContext';
-import styles from './Header.module.css';
+import { Link } from 'react-router-dom'
+import { useNavigationConfig, useSiteConfig } from '../../config/ConfigContext'
+import { ThemeSwitcher } from '../theme/ThemeSwitcher'
+import { LanguageSwitcher } from '../theme/LanguageSwitcher'
+import { HamburgerMenu } from './HamburgerMenu'
+import { useI18n } from '../../i18n/I18nContext'
+import styles from './Header.module.css'
 
 /**
  * 根据路径获取导航项的国际化文本
@@ -22,28 +22,44 @@ function getNavigationLabel(path, t) {
     '/pages': 'pages.docs',
     '/files': 'pages.files',
     '/news': 'pages.news',
-  };
+    '/tutorials': 'pages.tutorials',
+  }
 
-  return t(pathToI18nKey[path]) || path;
+  return t(pathToI18nKey[path]) || path
 }
 
 /**
  * 页面头部导航组件
  */
 export function Header({ folderConfigs = [] }) {
-  const navigation = useNavigationConfig();
-  const siteConfig = useSiteConfig();
-  const { t } = useI18n();
-  
+  const navigation = useNavigationConfig()
+  const siteConfig = useSiteConfig()
+  const { t } = useI18n()
+
   // 合并静态导航和动态生成的导航
   const allNavigation = [
     ...navigation,
-    ...folderConfigs.map(config => ({
-      name: config.title,
-      path: `/${config.name}`,
-      isDynamic: true
-    }))
-  ];
+    ...folderConfigs
+      .filter(config => config.showInNavigation !== false) // 过滤不显示的项
+      .map(config => ({
+        name: config.title,
+        path: `/${config.name}`,
+        isDynamic: true,
+        showInMobile: config.showInMobile ?? false, // 使用 config 中的配置
+      })),
+  ]
+
+  // 分离移动端显示和汉堡菜单中的导航项
+  const mobileVisibleNav = allNavigation.filter(
+    item => item.showInMobile !== false
+  )
+  const hamburgerNav = allNavigation.filter(item => item.showInMobile === false)
+
+  // 为汉堡菜单准备数据
+  const hamburgerItems = hamburgerNav.map(item => ({
+    path: item.path,
+    label: item.isDynamic ? item.name : getNavigationLabel(item.path, t),
+  }))
 
   return (
     <header className={styles.header}>
@@ -52,23 +68,31 @@ export function Header({ folderConfigs = [] }) {
           {siteConfig?.title || t('pages.home')}
         </Link>
 
+        {/* 桌面端导航 - 显示所有导航项 */}
         <nav className={styles.nav}>
-          {allNavigation.map((item) => (
-            <Link 
-              key={item.path} 
-              to={item.path} 
-              className={styles.navLink}
-            >
+          {allNavigation.map(item => (
+            <Link key={item.path} to={item.path} className={styles.navLink}>
+              {item.isDynamic ? item.name : getNavigationLabel(item.path, t)}
+            </Link>
+          ))}
+        </nav>
+
+        {/* 移动端导航 - 只显示配置为 showInMobile 的项 */}
+        <nav className={styles.mobileNav}>
+          {mobileVisibleNav.map(item => (
+            <Link key={item.path} to={item.path} className={styles.navLink}>
               {item.isDynamic ? item.name : getNavigationLabel(item.path, t)}
             </Link>
           ))}
         </nav>
 
         <div className={styles.actions}>
+          {/* 汉堡菜单 - 仅在移动端显示 */}
+          <HamburgerMenu items={hamburgerItems} />
           <LanguageSwitcher />
           <ThemeSwitcher />
         </div>
       </div>
     </header>
-  );
+  )
 }

@@ -4,22 +4,18 @@
 # 用于将构建产出部署到 GitHub Pages
 # 
 # 使用方法：
-#   子目录部署（domain.com/ppage）: ./scripts/deploy.sh
-#   根域名部署（domain.com）:        ./scripts/deploy.sh root
+#   ./scripts/deploy.sh 或 npm run deploy
+#
+# 特性：
+#   - 使用相对路径构建，支持任意部署路径
+#   - 自动读取 config.yml 配置
+#   - 支持自定义域名（CNAME）
+#   - 一键自动化部署
 
 set -e
 
-echo "🚀 开始构建和部署..."
-
-# 检查部署类型参数
-DEPLOY_TYPE="${1:-subdir}"
-if [ "$DEPLOY_TYPE" = "root" ]; then
-  echo "📍 部署类型: 根域名部署（/）"
-  BUILD_COMMAND="npm run build:root"
-else
-  echo "📍 部署类型: 子目录部署（/ppage/）"
-  BUILD_COMMAND="npm run build:subdir"
-fi
+echo "🚀 PPage 部署工具 - 开始部署..."
+echo ""
 
 # 0. 从 public/config.yml 读取配置
 echo "🔍 读取配置文件..."
@@ -56,6 +52,19 @@ else
   echo "ℹ️  未配置自定义域名"
 fi
 
+echo ""
+
+# 部署确认（可通过环境变量 SKIP_CONFIRM=1 跳过）
+if [ "$SKIP_CONFIRM" != "1" ]; then
+  read -p "⚠️  确认部署到上述仓库？ [y/N] " -n 1 -r
+  echo
+  if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+    echo "❌ 取消部署"
+    exit 0
+  fi
+  echo ""
+fi
+
 # 1. 清理旧的构建产出
 if [ -d "dist" ]; then
   echo "🧹 清理旧的构建产出..."
@@ -63,8 +72,15 @@ if [ -d "dist" ]; then
 fi
 
 # 2. 构建项目
-echo "📦 构建项目..."
-$BUILD_COMMAND
+echo "📦 构建项目（使用相对路径，支持任意部署路径）..."
+npm run build
+
+# 2.3. 验证构建产物
+if [ ! -f "dist/index.html" ]; then
+  echo "❌ 错误: 构建失败，未找到 dist/index.html"
+  exit 1
+fi
+echo "✓ 构建成功"
 
 # 2.5. 生成 CNAME 文件（如果配置了自定义域名）
 if [ -n "$CUSTOM_DOMAIN" ]; then
@@ -73,6 +89,11 @@ if [ -n "$CUSTOM_DOMAIN" ]; then
   echo "✅ CNAME 文件已生成: $CUSTOM_DOMAIN"
 fi
 
+# 2.6. 添加 .nojekyll 文件（禁用 Jekyll 处理）
+echo "📄 添加 .nojekyll 文件..."
+touch dist/.nojekyll
+echo "✅ .nojekyll 文件已生成（禁用 Jekyll，确保所有文件正确部署）"
+
 # 3. 进入构建产出目录
 cd dist
 
@@ -80,7 +101,9 @@ cd dist
 if [ ! -d ".git" ]; then
   echo "🔧 初始化 Git 仓库..."
   git init
-  git checkout -b gh-pages
+  git checkout -b "$BRANCH"
+else
+  echo "✓ Git 仓库已存在"
 fi
 
 # 5. 添加所有文件
@@ -98,7 +121,19 @@ git remote set-url origin "$REPOSITORY"
 git push -f origin "$BRANCH"
 
 echo "✅ 部署完成！"
-echo "📁 产出目录: dist/"
-echo "🌐 请稍候片刻访问你的 GitHub Pages 网址"
+echo ""
+echo "🎉 部署信息："
+echo "  仓库: $REPOSITORY"
+echo "  分支: $BRANCH"
+if [ -n "$CUSTOM_DOMAIN" ]; then
+  echo "  域名: https://$CUSTOM_DOMAIN"
+else
+  # 从仓库 URL 提取 username 和 repo
+  REPO_INFO=$(echo "$REPOSITORY" | sed 's/.*github.com[:/]\(.*\)\.git/\1/' | sed 's/.*github.com[:/]\(.*\)/\1/')
+  echo "  网址: https://$REPO_INFO (GitHub Pages)"
+fi
+echo ""
+echo "🕒 请稍候 1-2 分钟，GitHub Pages 正在部署..."
+echo "📌 提示: 相对路径构建支持任意部署路径（根路径/子目录）"
 
 cd ..
