@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { ConfigProvider, useSiteConfig } from './config/ConfigContext'
+import { ConfigProvider, useConfig } from './config/ConfigContext'
 import { ThemeProvider } from './components/theme/ThemeContext'
 import { I18nProvider } from './i18n/I18nContext'
 import { Layout } from './components/layout/Layout'
@@ -16,7 +16,8 @@ import { generateFolderConfigs } from './utils/folderScanner'
 import { getRouterBasename } from './utils/pathUtils'
 
 function AppContent() {
-  const siteConfig = useSiteConfig()
+  const { config } = useConfig() // 获取完整的配置对象
+  const siteConfig = config?.site // 站点配置
   const [folderConfigs, setFolderConfigs] = useState([])
   const [loading, setLoading] = useState(true)
 
@@ -31,8 +32,10 @@ function AppContent() {
   useEffect(() => {
     async function loadConfigs() {
       try {
-        // 传递 siteConfig 给 folderScanner
-        const configs = await generateFolderConfigs(siteConfig)
+        console.log('[App] config:', config)
+        console.log('[App] config.collections:', config?.collections)
+        // 传递完整的 config 给 folderScanner
+        const configs = await generateFolderConfigs(config)
         // 过滤掉 posts 和 pages，它们已经有专门的页面
         const dynamicConfigs = configs.filter(
           config =>
@@ -48,11 +51,11 @@ function AppContent() {
       }
     }
 
-    // 只有当 siteConfig 加载完成后才执行
-    if (siteConfig) {
+    // 只有当 config 加载完成后才执行
+    if (config) {
       loadConfigs()
     }
-  }, [siteConfig])
+  }, [config])
 
   // 使用自动计算的 basename，适配任意部署路径
   const basename = getRouterBasename()
