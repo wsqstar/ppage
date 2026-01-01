@@ -124,12 +124,12 @@ files:
 
 # ========================================
 projects:
-  - name: "【请填写】项目名称"
-    description: "【请填写】项目描述"
-    url: "https://github.com/wsqstar/ppage"
+  - name: "PPage"
+    description: "纯前端的个人主页生成系统"
+    url: "https://github.com/mappedinfo/ppage"
     tags:
-      - "【请填写】标签1"
-      - "【请填写】标签2"
+      - "前端"
+      - "GitHub"
 
 # ========================================
 # 部署配置
