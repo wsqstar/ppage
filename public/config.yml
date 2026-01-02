@@ -16,7 +16,7 @@ site:
 profile:
   name: "Shiqi Wang"
   avatar: "/assets/images/avatar.jpg"  # 请将头像放在 public/assets/images/ 目录下
-  bio: "【请填写】简短的个人介绍"
+  bio: "HKUST(GZ) UGOD 1st Year PhD student"
   email: "shiqi.wang@example.com"
   location: "Guangzhou, China"
 
@@ -71,7 +71,6 @@ theme:
     - "dark"
     - "academic"
     - "glass"
-
 
 # ========================================
 # 语言配置
@@ -147,9 +146,9 @@ deploy:
 # ========================================
 # 可以展示学术活动、论文状态、访问交流等动态信息
 news:
-  - title: "【请填写】动态标题"
-    description: "【请填写】动态描述"
-    type: "paper"  # 可选: paper, award, talk, visit, conference, graduation, service, other
+  - title: "创建了PPage项目"
+    description: "为了写个人主页，创建了一个静态网站生成器"
+    type: "other"  # 可选: paper, award, talk, visit, conference, graduation, service, other
     date: "2025-12-31"
     tags:
-      - "【请填写】标签"
+      - "项目"
