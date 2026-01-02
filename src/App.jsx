@@ -32,8 +32,6 @@ function AppContent() {
   useEffect(() => {
     async function loadConfigs() {
       try {
-        console.log('[App] config:', config)
-        console.log('[App] config.collections:', config?.collections)
         // 传递完整的 config 给 folderScanner
         const configs = await generateFolderConfigs(config)
         // 过滤掉 posts 和 pages，它们已经有专门的页面

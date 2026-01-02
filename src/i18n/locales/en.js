@@ -22,6 +22,7 @@ export const en = {
     files: 'Files',
     news: 'News',
     tutorials: 'Tutorials',
+    development: 'Development',
   },
 
   // Home page
