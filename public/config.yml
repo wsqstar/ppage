@@ -16,7 +16,7 @@ site:
 # ========================================
 profile:
   name: "Shiqi Wang"
-  avatar: "/assets/images/avatar.jpg"  # 请将头像放在 public/assets/images/ 目录下
+  avatar: "/assets/images/GIStudy.jpg"  # 请将头像放在 public/assets/images/ 目录下
   bio: "HKUST(GZ) UGOD 1st Year PhD student"
   email: "shiqi.wang@example.com"
   location: "Guangzhou, China"
