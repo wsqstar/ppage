@@ -9,6 +9,7 @@ site:
   description: "This is my personal website."
   author: "Shiqi Wang"
   baseUrl: "/"
+  favicon: "/GIStudy.jpg"  
 
 # ========================================
 # 个人信息
