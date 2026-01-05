@@ -74,7 +74,7 @@ navigation:
   - name: "动态"
     path: "/news"
     showInMobile: false  # 放入汉堡菜单
-    
+
 
 # ========================================
 # 主题配置
@@ -113,6 +113,11 @@ collections:
     showInNavigation: false  # 是否在导航栏显示
     showInMobile: false     # 移动端是否直接显示(false则放入汉堡菜单)
     order: 1                # 导航顺序
+  development:
+    enabled: false           # 是否启用开发文档
+    showInNavigation: true  # 是否在导航栏显示
+    showInMobile: false     # 移动端是否直接显示(false则放入汉堡菜单)
+    order: 2                # 导航顺序
   # 可以添加更多自定义文档集合
   # guides:
   #   enabled: false
