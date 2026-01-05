@@ -51,24 +51,30 @@ navigation:
   - name: "首页"
     path: "/"
     showInMobile: true  # 始终显示
+    order: 1
   - name: "关于"
     path: "/about"
     showInMobile: true  # 始终显示
+    order: 2
   - name: "项目"
     path: "/projects"
     showInMobile: false  # 放入汉堡菜单
+    order: 3
   - name: "博客"
     path: "/posts"
     showInMobile: false  # 放入汉堡菜单
+    order: 4
   - name: "文档"
     path: "/pages"
     showInMobile: false  # 放入汉堡菜单
+    order: 5
   - name: "文件"
     path: "/files"
     showInMobile: false  # 放入汉堡菜单
   - name: "动态"
     path: "/news"
     showInMobile: false  # 放入汉堡菜单
+    
 
 # ========================================
 # 主题配置
