@@ -173,3 +173,20 @@ news:
     date: "2025-12-31"
     tags:
       - "项目"
+
+
+# Google Analytics 配置
+# 用于网站访问数据统计和分析
+analytics:
+  # Google Analytics 测量ID（GA4）
+  # 格式示例: G-XXXXXXXXXX
+  # 获取方式: 在 Google Analytics 后台创建数据流后获得
+  googleAnalytics: "G-78LCM63BFX"  # 留空则不启用 Google Analytics
+  
+  # 是否在开发环境中启用（默认为 false）
+  # true: 开发环境也会发送数据到 GA
+  # false: 只在生产环境（部署后）发送数据
+  enableInDev: false
+
+
+
