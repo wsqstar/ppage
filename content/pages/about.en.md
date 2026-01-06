@@ -18,9 +18,10 @@ Regarding research interests, I primarily focus on the co-optimization of spatia
 
 In terms of technical capabilities, I possess a solid background in full-stack development and data science, enabling me to independently complete the entire research cycle from data acquisition and algorithm modeling to system deployment:
 
-Spatial Data Analysis and Modeling: Proficient in Python (GeoPandas, PyTorch) and R, with expertise in complex network analysis and multi-objective optimization.
+- Spatial Data Analysis and Modeling: Proficient in Python (GeoPandas, PyTorch) and R, with expertise in complex network analysis and multi-objective optimization.
 
-Engineering Development and Deployment: Extensive experience in cloud computing and DevOps (AWS, Docker, Linux), skilled in WebGIS full-stack development (Vue.js, Leaflet, Flask, PostGIS), capable of transforming theoretical models into visualized decision support platforms.
-Big Data Processing: Rich experience in data cleaning and web crawling, adept at handling multi-source heterogeneous data ranging from social media text to infrared camera imagery.
+- Engineering Development and Deployment: Extensive experience in cloud computing and DevOps (AWS, Docker, Linux), skilled in WebGIS full-stack development (Vue.js, Leaflet, Flask, PostGIS), capable of transforming theoretical models into visualized decision support platforms.
+
+- Big Data Processing: Rich experience in data cleaning and web crawling, adept at handling multi-source heterogeneous data ranging from social media text to infrared camera imagery.
 
 I am committed to integrating the precision of computational science with the humanistic concerns of social science, driving smarter, more inclusive, and sustainable urban development through data-driven approaches.
