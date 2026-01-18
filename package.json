@@ -4,8 +4,12 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "predev": "node scripts/encrypt.js || true",
+    "dev": "node scripts/dev-with-cleanup.js",
+    "decrypt": "node scripts/decrypt.js",
+    "prebuild": "node scripts/encrypt.js || true",
     "build": "vite build",
+    "prebuild:ssg": "node scripts/encrypt.js || true",
     "build:ssg": "vite build && node scripts/prerender.js && node scripts/generate-sitemap.js",
     "clean": "rm -rf dist",
     "lint": "npm run lint:js && npm run lint:css",
@@ -19,6 +23,7 @@
     "preview": "vite preview --port 4173",
     "init": "node scripts/init.js",
     "update": "node scripts/update.js",
+    "encrypt": "node scripts/encrypt.js",
     "deploy": "./scripts/deploy.sh",
     "prepare": "husky"
   },
