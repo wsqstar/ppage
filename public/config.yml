@@ -75,6 +75,10 @@ navigation:
   - name: "动态"
     path: "/news"
     showInMobile: false  # 放入汉堡菜单
+  - name: "友情链接"
+    path: "/links"
+    showInMobile: false  # 放入汉堡菜单
+    order: 7
 
 
 # ========================================
@@ -150,6 +154,31 @@ projects:
     tags:
       - "前端"
       - "GitHub"
+
+
+# 友情链接配置
+# 展示其他网站、朋友博客、合作伙伴等
+links:
+  - name: "Chunhou"
+    description: "Phd Student in HKUST(GZ)"
+    url: "https://jichunhou.me"
+    avatar: "/assets/images/link-avatar.jpg"  # 可选：链接站点的头像或 logo
+    tags:
+      - "博客"
+      - "技术"
+  - name: "GeoHey 地图学博客"
+    description: "爱看的地图学网站"
+    url: "https://blog.geohey.com/"
+    tags:
+      - "博客"
+      - "技术"
+      - "地图"
+  - name: "YueLab"
+    description: "当前在YueLab读博士学位"
+    url: "https://lab.geoarxiv.space/"
+    tags:
+      - "实验室"
+      - "学术"
 
 # ========================================
 # 部署配置
