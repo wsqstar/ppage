@@ -148,6 +148,13 @@ files:
 
 # ========================================
 projects:
+  - name: "学术日历"
+    description: "DDL Calendar - 学术会议和期刊截止日期日历"
+    url: "https://mappedinfo.github.io/ddl-calendar/"
+    tags:
+      - "学术"
+      - "日历"
+      - "会议"
   - name: "PPage"
     description: "纯前端的个人主页生成系统"
     url: "https://github.com/mappedinfo/ppage"
