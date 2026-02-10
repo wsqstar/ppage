@@ -148,6 +148,15 @@ files:
 
 # ========================================
 projects:
+  - name: "CCFDDL"
+    description: "更好用的DDL数据 - 计算机学科会议期刊截止日期查询（非本站相关项目，但是很好用）"
+    url: "https://ccfddl.com/"
+    tags:
+      - "学术"
+      - "DDL"
+      - "CCF"
+      - "推荐"
+      - "非本站但推荐"
   - name: "学术日历"
     description: "DDL Calendar - 学术会议和期刊截止日期日历"
     url: "https://mappedinfo.github.io/ddl-calendar/"
@@ -155,6 +164,7 @@ projects:
       - "学术"
       - "日历"
       - "会议"
+      - "DDL"
   - name: "PPage"
     description: "纯前端的个人主页生成系统"
     url: "https://github.com/mappedinfo/ppage"
