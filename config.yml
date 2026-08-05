@@ -148,6 +148,14 @@ files:
 
 # ========================================
 projects:
+  - name: "GIStudio Notes"
+    description: "GIStudio 开放知识花园——持续整理的 GIS、GeoAI、人工智能与研究实践笔记"
+    url: "https://notes.gistudio.xyz/"
+    tags:
+      - "知识库"
+      - "GeoAI"
+      - "GIS"
+      - "推荐"
   - name: "CCFDDL"
     description: "更好用的DDL数据 - 计算机学科会议期刊截止日期查询（非本站相关项目，但是很好用）"
     url: "https://ccfddl.com/"
