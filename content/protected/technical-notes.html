@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- 基础 SEO -->
+  <title>技术笔记（保密） - 个人主页</title>
+  <meta name="description" content="内部技术笔记和研究">
+  <meta name="keywords" content="技术, 研究, 保密">
+  <meta name="author" content="Your Name">
+  
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="">
+  <meta property="og:title" content="技术笔记（保密） - 个人主页">
+  <meta property="og:description" content="内部技术笔记和研究">
+  <meta property="og:image" content="/og-image.png">
+  <meta property="og:site_name" content="个人主页">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="">
+  <meta name="twitter:title" content="技术笔记（保密） - 个人主页">
+  <meta name="twitter:description" content="内部技术笔记和研究">
+  <meta name="twitter:image" content="/og-image.png">
+  
+  <!-- 结构化数据 (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "技术笔记（保密）",
+    "description": "内部技术笔记和研究",
+    "author": {
+      "@type": "Person",
+      "name": "Your Name"
+    },
+    "datePublished": "2025-01-08",
+    "dateModified": "2025-01-08",
+    "publisher": {
+      "@type": "Organization",
+      "name": "个人主页",
+      "url": ""
+    }
+  }
+  </script>
+  
+  <!-- 预加载关键资源 -->
+  <link rel="preload" href="./assets/index.css" as="style">
+  <link rel="preload" href="./assets/index.js" as="script">
+  
+  <!-- 样式表 -->
+  <link rel="stylesheet" href="./assets/index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github-dark.min.css">
+  
+  <!-- React Hydration 标记 -->
+  <meta name="prerender" content="true">
+  <meta name="hydrate" content="true">
+</head>
+<body>
+  <!-- SSG 预渲染内容 -->
+  <div id="root">
+    <div class="markdown-static-content">
+      <article class="markdown-article">
+        <header class="article-header">
+          <h1>技术笔记（保密）</h1>
+          <time datetime="2025-01-08">2025-01-08</time>
+          <div class="tags"><span class="tag">技术</span><span class="tag">研究</span><span class="tag">保密</span></div>
+        </header>
+        <div class="article-content">
+          <h1 id="%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BF%9D%E5%AF%86%EF%BC%89" tabindex="-1"><a class="header-anchor" href="#%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0%EF%BC%88%E4%BF%9D%E5%AF%86%EF%BC%89"><span>技术笔记（保密）</span></a></h1>
+<h2 id="%E9%A1%B9%E7%9B%AE%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1" tabindex="-1"><a class="header-anchor" href="#%E9%A1%B9%E7%9B%AE%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1"><span>项目架构设计</span></a></h2>
+<h3 id="%E6%A0%B8%E5%BF%83%E6%80%9D%E8%B7%AF" tabindex="-1"><a class="header-anchor" href="#%E6%A0%B8%E5%BF%83%E6%80%9D%E8%B7%AF"><span>核心思路</span></a></h3>
+<p>这个项目采用了一些独特的设计思路：</p>
+<pre><code class="language-mermaid">graph TD
+    A[用户访问] --&gt; B{内容类型}
+    B --&gt;|公开内容| C[直接显示]
+    B --&gt;|加密内容| D[密码验证]
+    D --&gt;|密码正确| E[解密并显示]
+    D --&gt;|密码错误| F[提示重试]
+</code></pre>
+<h3 id="%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E7%82%B9" tabindex="-1"><a class="header-anchor" href="#%E5%85%B3%E9%94%AE%E6%8A%80%E6%9C%AF%E7%82%B9"><span>关键技术点</span></a></h3>
+<h4 id="1.-%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95" tabindex="-1"><a class="header-anchor" href="#1.-%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95"><span>1. 加密算法</span></a></h4>
+<ul>
+<li><strong>算法</strong>: AES-256-GCM</li>
+<li><strong>密钥派生</strong>: PBKDF2 (100,000次迭代)</li>
+<li><strong>随机因子</strong>: 每次加密使用新的盐值和IV</li>
+</ul>
+<pre><code class="language-javascript"><span class="hljs-comment">// 示例代码（仅供参考）</span>
+<span class="hljs-keyword">const</span> encrypted = <span class="hljs-title function_">encryptContent</span>(content, password)
+<span class="hljs-keyword">const</span> decrypted = <span class="hljs-title function_">decryptContent</span>(encrypted, password)
+</code></pre>
+<h4 id="2.-%E5%89%8D%E7%AB%AF%E8%A7%A3%E5%AF%86" tabindex="-1"><a class="header-anchor" href="#2.-%E5%89%8D%E7%AB%AF%E8%A7%A3%E5%AF%86"><span>2. 前端解密</span></a></h4>
+<p>使用 Web Crypto API 实现浏览器端解密：</p>
+<pre><code class="language-javascript"><span class="hljs-comment">// 浏览器环境解密</span>
+<span class="hljs-keyword">const</span> key = <span class="hljs-keyword">await</span> <span class="hljs-title function_">deriveKey</span>(password, salt)
+<span class="hljs-keyword">const</span> decrypted = <span class="hljs-keyword">await</span> crypto.<span class="hljs-property">subtle</span>.<span class="hljs-title function_">decrypt</span>(
+  { <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;AES-GCM&#x27;</span>, <span class="hljs-attr">iv</span>: iv },
+  key,
+  encryptedData
+)
+</code></pre>
+<h4 id="3.-%E5%AE%89%E5%85%A8%E8%80%83%E8%99%91" tabindex="-1"><a class="header-anchor" href="#3.-%E5%AE%89%E5%85%A8%E8%80%83%E8%99%91"><span>3. 安全考虑</span></a></h4>
+<ul>
+<li>✅ 密码不存储在代码中</li>
+<li>✅ 加密文件可以安全提交到Git</li>
+<li>✅ 即使仓库公开，内容也无法被解密</li>
+<li>✅ 密码只在会话期间缓存</li>
+</ul>
+<h2 id="%E5%AE%9E%E7%8E%B0%E9%9A%BE%E7%82%B9" tabindex="-1"><a class="header-anchor" href="#%E5%AE%9E%E7%8E%B0%E9%9A%BE%E7%82%B9"><span>实现难点</span></a></h2>
+<h3 id="%E9%9A%BE%E7%82%B91%3A-%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9%E6%80%A7" tabindex="-1"><a class="header-anchor" href="#%E9%9A%BE%E7%82%B91%3A-%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9%E6%80%A7"><span>难点1: 浏览器兼容性</span></a></h3>
+<p>Web Crypto API 需要 HTTPS 环境或 localhost。</p>
+<p><strong>解决方案</strong>:</p>
+<ul>
+<li>开发环境使用 localhost</li>
+<li>生产环境强制 HTTPS</li>
+</ul>
+<h3 id="%E9%9A%BE%E7%82%B92%3A-%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96" tabindex="-1"><a class="header-anchor" href="#%E9%9A%BE%E7%82%B92%3A-%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96"><span>难点2: 性能优化</span></a></h3>
+<p>解密操作需要一定的计算时间。</p>
+<p><strong>优化措施</strong>:</p>
+<ul>
+<li>使用 SessionStorage 缓存密码</li>
+<li>异步解密，显示加载状态</li>
+<li>优化 PBKDF2 迭代次数</li>
+</ul>
+<h3 id="%E9%9A%BE%E7%82%B93%3A-%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C" tabindex="-1"><a class="header-anchor" href="#%E9%9A%BE%E7%82%B93%3A-%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C"><span>难点3: 用户体验</span></a></h3>
+<p>如何让密码输入体验更好？</p>
+<p><strong>改进点</strong>:</p>
+<ul>
+<li>美观的模态对话框</li>
+<li>密码显示/隐藏切换</li>
+<li>清晰的错误提示</li>
+<li>记住密码（会话级别）</li>
+</ul>
+<h2 id="%E6%9C%AA%E6%9D%A5%E6%94%B9%E8%BF%9B%E6%96%B9%E5%90%91" tabindex="-1"><a class="header-anchor" href="#%E6%9C%AA%E6%9D%A5%E6%94%B9%E8%BF%9B%E6%96%B9%E5%90%91"><span>未来改进方向</span></a></h2>
+<ol>
+<li><strong>多密码支持</strong>: 不同文件夹使用不同密码</li>
+<li><strong>密码提示</strong>: 提供密码提示功能</li>
+<li><strong>密码强度检查</strong>: 建议用户使用强密码</li>
+<li><strong>批量操作</strong>: 支持批量加密/解密</li>
+</ol>
+<h2 id="%E5%86%85%E9%83%A8%E8%B5%84%E6%96%99" tabindex="-1"><a class="header-anchor" href="#%E5%86%85%E9%83%A8%E8%B5%84%E6%96%99"><span>内部资料</span></a></h2>
+<p>以下是一些敏感的技术资料和配置信息…</p>
+<p>（此处省略具体内容）</p>
+<hr>
+<p><strong>注意</strong>: 本文档包含敏感技术信息，请勿分享给未授权人员。</p>
+
+        </div>
+      </article>
+    </div>
+  </div>
+  
+  <!-- React 应用入口 (用于 Hydration) -->
+  <script type="module" src="./assets/index.js"></script>
+  
+  <!-- 预渲染元数据 (供 React 使用) -->
+  <script id="prerender-data" type="application/json">
+  {"title":"技术笔记（保密）","metadata":{"title":"技术笔记（保密）","date":"2025-01-08","description":"内部技术笔记和研究","tags":["技术","研究","保密"],"category":"技术文档"},"path":"/content/protected/technical-notes.html"}
+  </script>
+</body>
+</html>

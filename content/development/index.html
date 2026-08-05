@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- 基础 SEO -->
+  <title>开发指南 - 个人主页</title>
+  <meta name="description" content="PPage 开发相关文档中心">
+  <meta name="keywords" content="">
+  <meta name="author" content="Your Name">
+  
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="">
+  <meta property="og:title" content="开发指南 - 个人主页">
+  <meta property="og:description" content="PPage 开发相关文档中心">
+  <meta property="og:image" content="/og-image.png">
+  <meta property="og:site_name" content="个人主页">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="">
+  <meta name="twitter:title" content="开发指南 - 个人主页">
+  <meta name="twitter:description" content="PPage 开发相关文档中心">
+  <meta name="twitter:image" content="/og-image.png">
+  
+  <!-- 结构化数据 (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "开发指南",
+    "description": "PPage 开发相关文档中心",
+    "author": {
+      "@type": "Person",
+      "name": "Your Name"
+    },
+    "datePublished": "2026-08-05T15:57:03.998Z",
+    "dateModified": "2026-08-05T15:57:03.998Z",
+    "publisher": {
+      "@type": "Organization",
+      "name": "个人主页",
+      "url": ""
+    }
+  }
+  </script>
+  
+  <!-- 预加载关键资源 -->
+  <link rel="preload" href="./assets/index.css" as="style">
+  <link rel="preload" href="./assets/index.js" as="script">
+  
+  <!-- 样式表 -->
+  <link rel="stylesheet" href="./assets/index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github-dark.min.css">
+  
+  <!-- React Hydration 标记 -->
+  <meta name="prerender" content="true">
+  <meta name="hydrate" content="true">
+</head>
+<body>
+  <!-- SSG 预渲染内容 -->
+  <div id="root">
+    <div class="markdown-static-content">
+      <article class="markdown-article">
+        <header class="article-header">
+          <h1>开发指南</h1>
+          
+          
+        </header>
+        <div class="article-content">
+          <h1 id="%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97" tabindex="-1"><a class="header-anchor" href="#%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97"><span>开发指南</span></a></h1>
+<p>欢迎来到 PPage 开发文档中心！这里提供了关于 PPage 项目开发、维护和发布的详细指南。</p>
+<h2 id="%F0%9F%93%9A-%E6%96%87%E6%A1%A3%E7%9B%AE%E5%BD%95" tabindex="-1"><a class="header-anchor" href="#%F0%9F%93%9A-%E6%96%87%E6%A1%A3%E7%9B%AE%E5%BD%95"><span>📚 文档目录</span></a></h2>
+<h3 id="%E7%89%88%E6%9C%AC%E5%8F%91%E5%B8%83" tabindex="-1"><a class="header-anchor" href="#%E7%89%88%E6%9C%AC%E5%8F%91%E5%B8%83"><span>版本发布</span></a></h3>
+<ul>
+<li><a href="./release-guide.md">GitHub Release 发布指南</a> - 学习如何发布新版本到 GitHub</li>
+</ul>
+<h2 id="%F0%9F%8E%AF-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B" tabindex="-1"><a class="header-anchor" href="#%F0%9F%8E%AF-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B"><span>🎯 快速开始</span></a></h2>
+<p>如果你是第一次参与 PPage 开发，建议按以下顺序阅读：</p>
+<ol>
+<li>先阅读项目根目录的 <a href="http://README.md" target="_blank" rel="noopener noreferrer">README.md</a> 了解项目概况</li>
+<li>查看 <a href="/tutorials">基础教程</a> 了解如何使用 PPage</li>
+<li>阅读本开发指南了解开发流程</li>
+</ol>
+<h2 id="%F0%9F%94%A7-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83" tabindex="-1"><a class="header-anchor" href="#%F0%9F%94%A7-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83"><span>🔧 开发环境</span></a></h2>
+<p>PPage 使用以下技术栈：</p>
+<ul>
+<li><strong>前端框架</strong>: React 19 + Vite</li>
+<li><strong>路由</strong>: React Router 7</li>
+<li><strong>Markdown 渲染</strong>: markdown-it</li>
+<li><strong>配置解析</strong>: js-yaml</li>
+<li><strong>代码质量</strong>: ESLint + Stylelint + Prettier</li>
+</ul>
+<h2 id="%F0%9F%93%A6-%E7%9B%B8%E5%85%B3%E8%B5%84%E6%BA%90" tabindex="-1"><a class="header-anchor" href="#%F0%9F%93%A6-%E7%9B%B8%E5%85%B3%E8%B5%84%E6%BA%90"><span>📦 相关资源</span></a></h2>
+<ul>
+<li><a href="https://github.com/Mappedinfo/ppage" target="_blank" rel="noopener noreferrer">项目仓库</a></li>
+<li><a href="https://github.com/Mappedinfo/ppage/issues" target="_blank" rel="noopener noreferrer">Issues</a></li>
+<li><a href="https://github.com/Mappedinfo/ppage/pulls" target="_blank" rel="noopener noreferrer">Pull Requests</a></li>
+<li><a href="https://github.com/Mappedinfo/ppage/releases" target="_blank" rel="noopener noreferrer">发布记录</a></li>
+</ul>
+<h2 id="%F0%9F%92%A1-%E8%B4%A1%E7%8C%AE%E6%8C%87%E5%8D%97" tabindex="-1"><a class="header-anchor" href="#%F0%9F%92%A1-%E8%B4%A1%E7%8C%AE%E6%8C%87%E5%8D%97"><span>💡 贡献指南</span></a></h2>
+<p>欢迎提交 Issue 和 Pull Request！在提交 PR 之前，请确保：</p>
+<ol>
+<li>✅ 代码通过 <code>npm run lint</code> 检查</li>
+<li>✅ 代码格式符合 <code>npm run format:check</code> 要求</li>
+<li>✅ 功能测试通过</li>
+<li>✅ 提交信息清晰明确</li>
+</ol>
+<h2 id="%F0%9F%93%AE-%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F" tabindex="-1"><a class="header-anchor" href="#%F0%9F%93%AE-%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F"><span>📮 联系方式</span></a></h2>
+<p>如有问题或建议，欢迎通过以下方式联系：</p>
+<ul>
+<li>提交 <a href="https://github.com/Mappedinfo/ppage/issues" target="_blank" rel="noopener noreferrer">GitHub Issue</a></li>
+<li>提交 <a href="https://github.com/Mappedinfo/ppage/pulls" target="_blank" rel="noopener noreferrer">Pull Request</a></li>
+</ul>
+
+        </div>
+      </article>
+    </div>
+  </div>
+  
+  <!-- React 应用入口 (用于 Hydration) -->
+  <script type="module" src="./assets/index.js"></script>
+  
+  <!-- 预渲染元数据 (供 React 使用) -->
+  <script id="prerender-data" type="application/json">
+  {"title":"开发指南","metadata":{"title":"开发指南","description":"PPage 开发相关文档中心","type":"page","order":0,"isPinned":true,"showInDocumentCenter":true},"path":"/content/development/index.html"}
+  </script>
+</body>
+</html>

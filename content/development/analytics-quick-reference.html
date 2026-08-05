@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- 基础 SEO -->
+  <title>Google Analytics 快速参考 - 个人主页</title>
+  <meta name="description" content="Google Analytics 配置和使用快速参考">
+  <meta name="keywords" content="">
+  <meta name="author" content="Your Name">
+  
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="">
+  <meta property="og:title" content="Google Analytics 快速参考 - 个人主页">
+  <meta property="og:description" content="Google Analytics 配置和使用快速参考">
+  <meta property="og:image" content="/og-image.png">
+  <meta property="og:site_name" content="个人主页">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="">
+  <meta name="twitter:title" content="Google Analytics 快速参考 - 个人主页">
+  <meta name="twitter:description" content="Google Analytics 配置和使用快速参考">
+  <meta name="twitter:image" content="/og-image.png">
+  
+  <!-- 结构化数据 (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Google Analytics 快速参考",
+    "description": "Google Analytics 配置和使用快速参考",
+    "author": {
+      "@type": "Person",
+      "name": "Your Name"
+    },
+    "datePublished": "2026-01-06",
+    "dateModified": "2026-01-06",
+    "publisher": {
+      "@type": "Organization",
+      "name": "个人主页",
+      "url": ""
+    }
+  }
+  </script>
+  
+  <!-- 预加载关键资源 -->
+  <link rel="preload" href="./assets/index.css" as="style">
+  <link rel="preload" href="./assets/index.js" as="script">
+  
+  <!-- 样式表 -->
+  <link rel="stylesheet" href="./assets/index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github-dark.min.css">
+  
+  <!-- React Hydration 标记 -->
+  <meta name="prerender" content="true">
+  <meta name="hydrate" content="true">
+</head>
+<body>
+  <!-- SSG 预渲染内容 -->
+  <div id="root">
+    <div class="markdown-static-content">
+      <article class="markdown-article">
+        <header class="article-header">
+          <h1>Google Analytics 快速参考</h1>
+          <time datetime="2026-01-06">2026-01-06</time>
+          
+        </header>
+        <div class="article-content">
+          <h1 id="google-analytics-%E5%BF%AB%E9%80%9F%E5%8F%82%E8%80%83" tabindex="-1"><a class="header-anchor" href="#google-analytics-%E5%BF%AB%E9%80%9F%E5%8F%82%E8%80%83"><span>Google Analytics 快速参考</span></a></h1>
+<h2 id="%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE" tabindex="-1"><a class="header-anchor" href="#%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE"><span>基本配置</span></a></h2>
+<p>在 <code>public/config.yml</code> 中添加：</p>
+<pre><code class="language-yaml"><span class="hljs-attr">analytics:</span>
+  <span class="hljs-attr">googleAnalytics:</span> <span class="hljs-string">&#x27;G-XXXXXXXXXX&#x27;</span> <span class="hljs-comment"># 你的 GA 测量 ID</span>
+  <span class="hljs-attr">enableInDev:</span> <span class="hljs-literal">false</span> <span class="hljs-comment"># 开发环境是否启用</span>
+</code></pre>
+<h2 id="%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6%E8%B7%9F%E8%B8%AA" tabindex="-1"><a class="header-anchor" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E4%BA%8B%E4%BB%B6%E8%B7%9F%E8%B8%AA"><span>自定义事件跟踪</span></a></h2>
+<h3 id="%E5%AF%BC%E5%85%A5%E5%87%BD%E6%95%B0" tabindex="-1"><a class="header-anchor" href="#%E5%AF%BC%E5%85%A5%E5%87%BD%E6%95%B0"><span>导入函数</span></a></h3>
+<pre><code class="language-jsx"><span class="hljs-keyword">import</span> { trackEvent } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;../components/analytics/GoogleAnalytics&#x27;</span>
+</code></pre>
+<h3 id="%E5%8F%91%E9%80%81%E4%BA%8B%E4%BB%B6" tabindex="-1"><a class="header-anchor" href="#%E5%8F%91%E9%80%81%E4%BA%8B%E4%BB%B6"><span>发送事件</span></a></h3>
+<pre><code class="language-jsx"><span class="hljs-comment">// 简单事件</span>
+<span class="hljs-title function_">trackEvent</span>(<span class="hljs-string">&#x27;event_name&#x27;</span>)
+
+<span class="hljs-comment">// 带参数的事件</span>
+<span class="hljs-title function_">trackEvent</span>(<span class="hljs-string">&#x27;event_name&#x27;</span>, {
+  <span class="hljs-attr">param1</span>: <span class="hljs-string">&#x27;value1&#x27;</span>,
+  <span class="hljs-attr">param2</span>: <span class="hljs-string">&#x27;value2&#x27;</span>,
+})
+</code></pre>
+<h2 id="%E5%B8%B8%E8%A7%81%E4%BA%8B%E4%BB%B6%E7%A4%BA%E4%BE%8B" tabindex="-1"><a class="header-anchor" href="#%E5%B8%B8%E8%A7%81%E4%BA%8B%E4%BB%B6%E7%A4%BA%E4%BE%8B"><span>常见事件示例</span></a></h2>
+<h3 id="%E6%8C%89%E9%92%AE%E7%82%B9%E5%87%BB" tabindex="-1"><a class="header-anchor" href="#%E6%8C%89%E9%92%AE%E7%82%B9%E5%87%BB"><span>按钮点击</span></a></h3>
+<pre><code class="language-jsx"><span class="hljs-title function_">trackEvent</span>(<span class="hljs-string">&#x27;button_click&#x27;</span>, {
+  <span class="hljs-attr">button_name</span>: <span class="hljs-string">&#x27;contact&#x27;</span>,
+  <span class="hljs-attr">button_location</span>: <span class="hljs-string">&#x27;header&#x27;</span>,
+})
+</code></pre>
+<h3 id="%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD" tabindex="-1"><a class="header-anchor" href="#%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD"><span>文件下载</span></a></h3>
+<pre><code class="language-jsx"><span class="hljs-title function_">trackEvent</span>(<span class="hljs-string">&#x27;file_download&#x27;</span>, {
+  <span class="hljs-attr">file_name</span>: <span class="hljs-string">&#x27;paper.pdf&#x27;</span>,
+  <span class="hljs-attr">file_type</span>: <span class="hljs-string">&#x27;pdf&#x27;</span>,
+})
+</code></pre>
+<h3 id="%E5%A4%96%E9%83%A8%E9%93%BE%E6%8E%A5" tabindex="-1"><a class="header-anchor" href="#%E5%A4%96%E9%83%A8%E9%93%BE%E6%8E%A5"><span>外部链接</span></a></h3>
+<pre><code class="language-jsx"><span class="hljs-title function_">trackEvent</span>(<span class="hljs-string">&#x27;outbound_link&#x27;</span>, {
+  <span class="hljs-attr">link_url</span>: <span class="hljs-string">&#x27;https://example.com&#x27;</span>,
+  <span class="hljs-attr">link_text</span>: <span class="hljs-string">&#x27;Example&#x27;</span>,
+})
+</code></pre>
+<h3 id="%E8%A1%A8%E5%8D%95%E6%8F%90%E4%BA%A4" tabindex="-1"><a class="header-anchor" href="#%E8%A1%A8%E5%8D%95%E6%8F%90%E4%BA%A4"><span>表单提交</span></a></h3>
+<pre><code class="language-jsx"><span class="hljs-title function_">trackEvent</span>(<span class="hljs-string">&#x27;form_submit&#x27;</span>, {
+  <span class="hljs-attr">form_name</span>: <span class="hljs-string">&#x27;contact&#x27;</span>,
+  <span class="hljs-attr">form_type</span>: <span class="hljs-string">&#x27;email&#x27;</span>,
+})
+</code></pre>
+<h3 id="%E8%A7%86%E9%A2%91%E6%92%AD%E6%94%BE" tabindex="-1"><a class="header-anchor" href="#%E8%A7%86%E9%A2%91%E6%92%AD%E6%94%BE"><span>视频播放</span></a></h3>
+<pre><code class="language-jsx"><span class="hljs-title function_">trackEvent</span>(<span class="hljs-string">&#x27;video_play&#x27;</span>, {
+  <span class="hljs-attr">video_title</span>: <span class="hljs-string">&#x27;Tutorial Video&#x27;</span>,
+  <span class="hljs-attr">video_duration</span>: <span class="hljs-string">&#x27;05:30&#x27;</span>,
+})
+</code></pre>
+<h2 id="%E7%8E%AF%E5%A2%83%E6%8E%A7%E5%88%B6" tabindex="-1"><a class="header-anchor" href="#%E7%8E%AF%E5%A2%83%E6%8E%A7%E5%88%B6"><span>环境控制</span></a></h2>
+<table>
+<thead>
+<tr>
+<th>环境</th>
+<th>enableInDev</th>
+<th>发送数据</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>开发</td>
+<td>false</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>开发</td>
+<td>true</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>生产</td>
+<td>false</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>生产</td>
+<td>true</td>
+<td>✅</td>
+</tr>
+</tbody>
+</table>
+<h2 id="%E6%95%85%E9%9A%9C%E6%8E%92%E6%9F%A5" tabindex="-1"><a class="header-anchor" href="#%E6%95%85%E9%9A%9C%E6%8E%92%E6%9F%A5"><span>故障排查</span></a></h2>
+<h3 id="%E6%A3%80%E6%9F%A5%E5%88%9D%E5%A7%8B%E5%8C%96" tabindex="-1"><a class="header-anchor" href="#%E6%A3%80%E6%9F%A5%E5%88%9D%E5%A7%8B%E5%8C%96"><span>检查初始化</span></a></h3>
+<p>打开浏览器控制台，查看：</p>
+<pre><code>Google Analytics: 初始化成功 (G-XXXXXXXXXX)
+</code></pre>
+<h3 id="%E6%A3%80%E6%9F%A5%E9%A1%B5%E9%9D%A2%E8%B7%9F%E8%B8%AA" tabindex="-1"><a class="header-anchor" href="#%E6%A3%80%E6%9F%A5%E9%A1%B5%E9%9D%A2%E8%B7%9F%E8%B8%AA"><span>检查页面跟踪</span></a></h3>
+<p>路由变化时应看到：</p>
+<pre><code>Google Analytics: 页面浏览跟踪 - /path
+</code></pre>
+<h3 id="%E6%A3%80%E6%9F%A5%E4%BA%8B%E4%BB%B6%E8%B7%9F%E8%B8%AA" tabindex="-1"><a class="header-anchor" href="#%E6%A3%80%E6%9F%A5%E4%BA%8B%E4%BB%B6%E8%B7%9F%E8%B8%AA"><span>检查事件跟踪</span></a></h3>
+<p>触发事件时应看到：</p>
+<pre><code>Google Analytics: 事件跟踪 - event_name {params}
+</code></pre>
+<h2 id="%E6%B5%8B%E9%87%8F-id-%E6%A0%BC%E5%BC%8F" tabindex="-1"><a class="header-anchor" href="#%E6%B5%8B%E9%87%8F-id-%E6%A0%BC%E5%BC%8F"><span>测量 ID 格式</span></a></h2>
+<p>✅ 正确：<code>G-XXXXXXXXXX</code>（GA4）<br>
+❌ 错误：<code>UA-XXXXXX-X</code>（旧版 Universal Analytics）</p>
+<h2 id="%E5%9C%A8-ga-%E5%90%8E%E5%8F%B0%E6%9F%A5%E7%9C%8B" tabindex="-1"><a class="header-anchor" href="#%E5%9C%A8-ga-%E5%90%8E%E5%8F%B0%E6%9F%A5%E7%9C%8B"><span>在 GA 后台查看</span></a></h2>
+<ol>
+<li><strong>实时报告</strong>：报告 → 实时</li>
+<li><strong>事件报告</strong>：报告 → 参与度 → 事件</li>
+<li><strong>页面报告</strong>：报告 → 参与度 → 页面和屏幕</li>
+</ol>
+<h2 id="%E7%9B%B8%E5%85%B3%E6%96%87%E6%A1%A3" tabindex="-1"><a class="header-anchor" href="#%E7%9B%B8%E5%85%B3%E6%96%87%E6%A1%A3"><span>相关文档</span></a></h2>
+<ul>
+<li><a href="./google-analytics-guide.md">完整指南</a></li>
+<li><a href="../../config.example.yml">配置文件说明</a></li>
+</ul>
+
+        </div>
+      </article>
+    </div>
+  </div>
+  
+  <!-- React 应用入口 (用于 Hydration) -->
+  <script type="module" src="./assets/index.js"></script>
+  
+  <!-- 预渲染元数据 (供 React 使用) -->
+  <script id="prerender-data" type="application/json">
+  {"title":"Google Analytics 快速参考","metadata":{"title":"Google Analytics 快速参考","date":"2026-01-06","description":"Google Analytics 配置和使用快速参考"},"path":"/content/development/analytics-quick-reference.html"}
+  </script>
+</body>
+</html>

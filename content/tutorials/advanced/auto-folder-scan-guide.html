@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- 基础 SEO -->
+  <title>自动文件夹扫描指南 - 个人主页</title>
+  <meta name="description" content="自动文件夹扫描功能使用指南
+
+功能概述
+
+系统现在支持自动扫描 /content 目录下的所有文件夹（排除 files 文件夹），并为每个文件夹自动生成文档中心页面和导航菜单。
+
+> 📌 前置知识：建议先阅读 文档中心组件指南 了解基本用法，然后阅读 高级功能使用 了解双向链接等特性。
+
+核心特性
+
+1. 自动发现文...">
+  <meta name="keywords" content="tutorial, automation, folder-scan">
+  <meta name="author" content="Your Name">
+  
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="">
+  <meta property="og:title" content="自动文件夹扫描指南 - 个人主页">
+  <meta property="og:description" content="自动文件夹扫描功能使用指南
+
+功能概述
+
+系统现在支持自动扫描 /content 目录下的所有文件夹（排除 files 文件夹），并为每个文件夹自动生成文档中心页面和导航菜单。
+
+> 📌 前置知识：建议先阅读 文档中心组件指南 了解基本用法，然后阅读 高级功能使用 了解双向链接等特性。
+
+核心特性
+
+1. 自动发现文...">
+  <meta property="og:image" content="/og-image.png">
+  <meta property="og:site_name" content="个人主页">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="">
+  <meta name="twitter:title" content="自动文件夹扫描指南 - 个人主页">
+  <meta name="twitter:description" content="自动文件夹扫描功能使用指南
+
+功能概述
+
+系统现在支持自动扫描 /content 目录下的所有文件夹（排除 files 文件夹），并为每个文件夹自动生成文档中心页面和导航菜单。
+
+> 📌 前置知识：建议先阅读 文档中心组件指南 了解基本用法，然后阅读 高级功能使用 了解双向链接等特性。
+
+核心特性
+
+1. 自动发现文...">
+  <meta name="twitter:image" content="/og-image.png">
+  
+  <!-- 结构化数据 (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "自动文件夹扫描指南",
+    "description": "自动文件夹扫描功能使用指南
+
+功能概述
+
+系统现在支持自动扫描 /content 目录下的所有文件夹（排除 files 文件夹），并为每个文件夹自动生成文档中心页面和导航菜单。
+
+> 📌 前置知识：建议先阅读 文档中心组件指南 了解基本用法，然后阅读 高级功能使用 了解双向链接等特性。
+
+核心特性
+
+1. 自动发现文...",
+    "author": {
+      "@type": "Person",
+      "name": "Your Name"
+    },
+    "datePublished": "Wed Dec 31 2025 08:00:00 GMT+0800 (中国标准时间)",
+    "dateModified": "Wed Dec 31 2025 08:00:00 GMT+0800 (中国标准时间)",
+    "publisher": {
+      "@type": "Organization",
+      "name": "个人主页",
+      "url": ""
+    }
+  }
+  </script>
+  
+  <!-- 预加载关键资源 -->
+  <link rel="preload" href="./assets/index.css" as="style">
+  <link rel="preload" href="./assets/index.js" as="script">
+  
+  <!-- 样式表 -->
+  <link rel="stylesheet" href="./assets/index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github-dark.min.css">
+  
+  <!-- React Hydration 标记 -->
+  <meta name="prerender" content="true">
+  <meta name="hydrate" content="true">
+</head>
+<body>
+  <!-- SSG 预渲染内容 -->
+  <div id="root">
+    <div class="markdown-static-content">
+      <article class="markdown-article">
+        <header class="article-header">
+          <h1>自动文件夹扫描指南</h1>
+          <time datetime="Wed Dec 31 2025 08:00:00 GMT+0800 (中国标准时间)">Wed Dec 31 2025 08:00:00 GMT+0800 (中国标准时间)</time>
+          <div class="tags"><span class="tag">tutorial</span><span class="tag">automation</span><span class="tag">folder-scan</span></div>
+        </header>
+        <div class="article-content">
+          <h1 id="%E8%87%AA%E5%8A%A8%E6%96%87%E4%BB%B6%E5%A4%B9%E6%89%AB%E6%8F%8F%E5%8A%9F%E8%83%BD%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97" tabindex="-1"><a class="header-anchor" href="#%E8%87%AA%E5%8A%A8%E6%96%87%E4%BB%B6%E5%A4%B9%E6%89%AB%E6%8F%8F%E5%8A%9F%E8%83%BD%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97"><span>自动文件夹扫描功能使用指南</span></a></h1>
+<h2 id="%E5%8A%9F%E8%83%BD%E6%A6%82%E8%BF%B0" tabindex="-1"><a class="header-anchor" href="#%E5%8A%9F%E8%83%BD%E6%A6%82%E8%BF%B0"><span>功能概述</span></a></h2>
+<p>系统现在支持自动扫描 <code>/content</code> 目录下的所有文件夹（排除 <code>files</code> 文件夹），并为每个文件夹自动生成文档中心页面和导航菜单。</p>
+<blockquote>
+<p>📌 <strong>前置知识</strong>：建议先阅读 <a href="#doc-document-center-guide">文档中心组件指南</a> 了解基本用法，然后阅读 <a href="#doc-advanced-features">高级功能使用</a> 了解双向链接等特性。</p>
+</blockquote>
+<h2 id="%E6%A0%B8%E5%BF%83%E7%89%B9%E6%80%A7" tabindex="-1"><a class="header-anchor" href="#%E6%A0%B8%E5%BF%83%E7%89%B9%E6%80%A7"><span>核心特性</span></a></h2>
+<h3 id="1.-%E8%87%AA%E5%8A%A8%E5%8F%91%E7%8E%B0%E6%96%87%E4%BB%B6%E5%A4%B9" tabindex="-1"><a class="header-anchor" href="#1.-%E8%87%AA%E5%8A%A8%E5%8F%91%E7%8E%B0%E6%96%87%E4%BB%B6%E5%A4%B9"><span>1. 自动发现文件夹</span></a></h3>
+<p>系统会自动检测以下文件夹：</p>
+<ul>
+<li>✅ <code>content/posts/</code> - 博客文章（已有专门页面）</li>
+<li>✅ <code>content/pages/</code> - 文档页面（已有专门页面）</li>
+<li>✅ <code>content/tutorials/</code> - 教程（新建文件夹示例）</li>
+<li>✅ 任何其他新建的文件夹</li>
+</ul>
+<p><strong>排除</strong>：<code>content/files/</code> 文件夹（用于存储 PDF 等文件）</p>
+<h3 id="2.-index.md-%E9%85%8D%E7%BD%AE" tabindex="-1"><a class="header-anchor" href="#2.-index.md-%E9%85%8D%E7%BD%AE"><span>2. <a href="http://index.md" target="_blank" rel="noopener noreferrer">index.md</a> 配置</span></a></h3>
+<p>每个文件夹可以包含一个 <code>index.md</code> 文件来配置该文件夹的展示方式。</p>
+<h4 id="index.md-%E7%A4%BA%E4%BE%8B" tabindex="-1"><a class="header-anchor" href="#index.md-%E7%A4%BA%E4%BE%8B"><span><a href="http://index.md" target="_blank" rel="noopener noreferrer">index.md</a> 示例</span></a></h4>
+<pre><code class="language-yaml"><span class="hljs-meta">---</span>
+<span class="hljs-attr">title:</span> <span class="hljs-string">教程中心</span>
+<span class="hljs-attr">description:</span> <span class="hljs-string">系统使用教程和指南</span>
+<span class="hljs-attr">type:</span> <span class="hljs-string">page</span>
+<span class="hljs-attr">enableTree:</span> <span class="hljs-literal">true</span>
+<span class="hljs-attr">showBreadcrumb:</span> <span class="hljs-literal">true</span>
+<span class="hljs-attr">layout:</span> <span class="hljs-string">sidebar</span>
+<span class="hljs-attr">icon:</span> <span class="hljs-string">📚</span>
+<span class="hljs-attr">order:</span> <span class="hljs-number">10</span>
+<span class="hljs-meta">---
+</span>
+<span class="hljs-comment"># 教程中心</span>
+
+<span class="hljs-string">这里是教程首页的内容...</span>
+</code></pre>
+<h4 id="%E5%8F%AF%E7%94%A8%E9%85%8D%E7%BD%AE%E5%AD%97%E6%AE%B5" tabindex="-1"><a class="header-anchor" href="#%E5%8F%AF%E7%94%A8%E9%85%8D%E7%BD%AE%E5%AD%97%E6%AE%B5"><span>可用配置字段</span></a></h4>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>说明</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>title</code></td>
+<td>string</td>
+<td>文件夹标题，会显示在导航栏</td>
+<td>文件夹名称（首字母大写）</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>string</td>
+<td>文件夹描述</td>
+<td>空</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>string</td>
+<td>文档类型（page/post）</td>
+<td>page</td>
+</tr>
+<tr>
+<td><code>enableTree</code></td>
+<td>boolean</td>
+<td>是否启用树形结构</td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>showBreadcrumb</code></td>
+<td>boolean</td>
+<td>是否显示面包屑导航</td>
+<td>false</td>
+</tr>
+<tr>
+<td><code>layout</code></td>
+<td>string</td>
+<td>布局模式（sidebar/dropdown/tabs）</td>
+<td>sidebar</td>
+</tr>
+<tr>
+<td><code>icon</code></td>
+<td>string</td>
+<td>图标（可选）</td>
+<td>null</td>
+</tr>
+<tr>
+<td><code>order</code></td>
+<td>number</td>
+<td>导航栏中的排序顺序</td>
+<td>999</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3.-%E6%96%87%E6%A1%A3%E6%8E%92%E5%BA%8F" tabindex="-1"><a class="header-anchor" href="#3.-%E6%96%87%E6%A1%A3%E6%8E%92%E5%BA%8F"><span>3. 文档排序</span></a></h3>
+<p>系统支持多层级的智能排序，优先级如下：</p>
+<h4 id="%E6%8E%92%E5%BA%8F%E4%BC%98%E5%85%88%E7%BA%A7" tabindex="-1"><a class="header-anchor" href="#%E6%8E%92%E5%BA%8F%E4%BC%98%E5%85%88%E7%BA%A7"><span>排序优先级</span></a></h4>
+<ol>
+<li><strong>置顶</strong> (<code>pinned</code> 或 <code>sticky</code>)</li>
+<li><strong>优先级</strong> (<code>priority</code>)</li>
+<li><strong>顺序</strong> (<code>order</code>)</li>
+<li><strong>文件名字母顺序</strong> (A-Z)</li>
+</ol>
+<h4 id="%E6%96%87%E6%A1%A3-front-matter-%E7%A4%BA%E4%BE%8B" tabindex="-1"><a class="header-anchor" href="#%E6%96%87%E6%A1%A3-front-matter-%E7%A4%BA%E4%BE%8B"><span>文档 Front Matter 示例</span></a></h4>
+<pre><code class="language-yaml"><span class="hljs-meta">---</span>
+<span class="hljs-attr">title:</span> <span class="hljs-string">快速开始</span>
+<span class="hljs-attr">order:</span> <span class="hljs-number">1</span>
+<span class="hljs-attr">pinned:</span> <span class="hljs-literal">true</span>
+<span class="hljs-attr">priority:</span> <span class="hljs-number">10</span>
+<span class="hljs-attr">collection:</span> <span class="hljs-string">tutorials</span>
+<span class="hljs-meta">---
+</span></code></pre>
+<h4 id="%E5%8F%AF%E7%94%A8%E5%AD%97%E6%AE%B5" tabindex="-1"><a class="header-anchor" href="#%E5%8F%AF%E7%94%A8%E5%AD%97%E6%AE%B5"><span>可用字段</span></a></h4>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pinned</code></td>
+<td>boolean</td>
+<td>是否置顶</td>
+</tr>
+<tr>
+<td><code>sticky</code></td>
+<td>boolean</td>
+<td>是否置顶（同 pinned）</td>
+</tr>
+<tr>
+<td><code>priority</code></td>
+<td>number</td>
+<td>优先级（数值越大越靠前）</td>
+</tr>
+<tr>
+<td><code>order</code></td>
+<td>number</td>
+<td>排序序号（数值越小越靠前）</td>
+</tr>
+<tr>
+<td><code>collection</code></td>
+<td>string</td>
+<td>所属集合（文件夹名称）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4.-%E6%A0%91%E5%BD%A2%E7%BB%93%E6%9E%84%E5%92%8C%E9%9D%A2%E5%8C%85%E5%B1%91" tabindex="-1"><a class="header-anchor" href="#4.-%E6%A0%91%E5%BD%A2%E7%BB%93%E6%9E%84%E5%92%8C%E9%9D%A2%E5%8C%85%E5%B1%91"><span>4. 树形结构和面包屑</span></a></h3>
+<p>通过 <code>parent</code> 字段建立文档的层级关系。</p>
+<h4 id="%E7%A4%BA%E4%BE%8B%EF%BC%9A%E7%88%B6%E5%AD%90%E6%96%87%E6%A1%A3" tabindex="-1"><a class="header-anchor" href="#%E7%A4%BA%E4%BE%8B%EF%BC%9A%E7%88%B6%E5%AD%90%E6%96%87%E6%A1%A3"><span>示例：父子文档</span></a></h4>
+<p><strong>父文档</strong> (<code>tutorial-index.md</code>):</p>
+<pre><code class="language-yaml"><span class="hljs-meta">---</span>
+<span class="hljs-attr">title:</span> <span class="hljs-string">教程索引</span>
+<span class="hljs-attr">id:</span> <span class="hljs-string">tutorial-index</span>
+<span class="hljs-attr">collection:</span> <span class="hljs-string">tutorials</span>
+<span class="hljs-attr">order:</span> <span class="hljs-number">1</span>
+<span class="hljs-meta">---
+</span></code></pre>
+<p><strong>子文档</strong> (<code>basic-tutorial.md</code>):</p>
+<pre><code class="language-yaml"><span class="hljs-meta">---</span>
+<span class="hljs-attr">title:</span> <span class="hljs-string">基础教程</span>
+<span class="hljs-attr">parent:</span> <span class="hljs-string">tutorial-index</span>
+<span class="hljs-attr">collection:</span> <span class="hljs-string">tutorials</span>
+<span class="hljs-attr">order:</span> <span class="hljs-number">1</span>
+<span class="hljs-meta">---
+</span></code></pre>
+<p><strong>子文档</strong> (<code>advanced-tutorial.md</code>):</p>
+<pre><code class="language-yaml"><span class="hljs-meta">---</span>
+<span class="hljs-attr">title:</span> <span class="hljs-string">高级教程</span>
+<span class="hljs-attr">parent:</span> <span class="hljs-string">tutorial-index</span>
+<span class="hljs-attr">collection:</span> <span class="hljs-string">tutorials</span>
+<span class="hljs-attr">order:</span> <span class="hljs-number">2</span>
+<span class="hljs-meta">---
+</span></code></pre>
+<p>这样会生成如下树形结构：</p>
+<pre><code>📚 教程索引
+  ├─ 📄 基础教程
+  └─ 📄 高级教程
+</code></pre>
+<h2 id="%E4%BD%BF%E7%94%A8%E6%AD%A5%E9%AA%A4" tabindex="-1"><a class="header-anchor" href="#%E4%BD%BF%E7%94%A8%E6%AD%A5%E9%AA%A4"><span>使用步骤</span></a></h2>
+<h3 id="%E6%AD%A5%E9%AA%A4-1%3A-%E5%88%9B%E5%BB%BA%E6%96%B0%E6%96%87%E4%BB%B6%E5%A4%B9" tabindex="-1"><a class="header-anchor" href="#%E6%AD%A5%E9%AA%A4-1%3A-%E5%88%9B%E5%BB%BA%E6%96%B0%E6%96%87%E4%BB%B6%E5%A4%B9"><span>步骤 1: 创建新文件夹</span></a></h3>
+<p>在 <code>content/</code> 目录下创建新文件夹：</p>
+<pre><code class="language-bash"><span class="hljs-built_in">mkdir</span> content/tutorials
+</code></pre>
+<h3 id="%E6%AD%A5%E9%AA%A4-2%3A-%E5%88%9B%E5%BB%BA-index.md%EF%BC%88%E5%8F%AF%E9%80%89%EF%BC%89" tabindex="-1"><a class="header-anchor" href="#%E6%AD%A5%E9%AA%A4-2%3A-%E5%88%9B%E5%BB%BA-index.md%EF%BC%88%E5%8F%AF%E9%80%89%EF%BC%89"><span>步骤 2: 创建 <a href="http://index.md" target="_blank" rel="noopener noreferrer">index.md</a>（可选）</span></a></h3>
+<pre><code class="language-bash"><span class="hljs-built_in">touch</span> content/tutorials/index.md
+</code></pre>
+<p>编辑 <code>index.md</code>：</p>
+<pre><code class="language-yaml"><span class="hljs-meta">---</span>
+<span class="hljs-attr">title:</span> <span class="hljs-string">教程中心</span>
+<span class="hljs-attr">description:</span> <span class="hljs-string">系统教程和指南</span>
+<span class="hljs-attr">enableTree:</span> <span class="hljs-literal">true</span>
+<span class="hljs-attr">showBreadcrumb:</span> <span class="hljs-literal">true</span>
+<span class="hljs-attr">order:</span> <span class="hljs-number">10</span>
+<span class="hljs-meta">---
+</span>
+<span class="hljs-comment"># 教程中心</span>
+
+<span class="hljs-string">欢迎！</span>
+</code></pre>
+<h3 id="%E6%AD%A5%E9%AA%A4-3%3A-%E6%B7%BB%E5%8A%A0%E6%96%87%E6%A1%A3" tabindex="-1"><a class="header-anchor" href="#%E6%AD%A5%E9%AA%A4-3%3A-%E6%B7%BB%E5%8A%A0%E6%96%87%E6%A1%A3"><span>步骤 3: 添加文档</span></a></h3>
+<p>创建文档文件：</p>
+<pre><code class="language-bash"><span class="hljs-built_in">touch</span> content/tutorials/getting-started.md
+<span class="hljs-built_in">touch</span> content/tutorials/advanced.md
+</code></pre>
+<p>编辑文档：</p>
+<pre><code class="language-yaml"><span class="hljs-meta">---</span>
+<span class="hljs-attr">title:</span> <span class="hljs-string">快速开始</span>
+<span class="hljs-attr">order:</span> <span class="hljs-number">1</span>
+<span class="hljs-attr">pinned:</span> <span class="hljs-literal">true</span>
+<span class="hljs-attr">collection:</span> <span class="hljs-string">tutorials</span>
+<span class="hljs-meta">---
+</span>
+<span class="hljs-comment"># 快速开始</span>
+
+<span class="hljs-string">内容...</span>
+</code></pre>
+<h3 id="%E6%AD%A5%E9%AA%A4-4%3A-%E5%90%AF%E5%8A%A8%E5%BA%94%E7%94%A8" tabindex="-1"><a class="header-anchor" href="#%E6%AD%A5%E9%AA%A4-4%3A-%E5%90%AF%E5%8A%A8%E5%BA%94%E7%94%A8"><span>步骤 4: 启动应用</span></a></h3>
+<pre><code class="language-bash">npm run dev
+</code></pre>
+<p>系统会自动：</p>
+<ol>
+<li>✅ 扫描发现 <code>tutorials</code> 文件夹</li>
+<li>✅ 读取 <code>index.md</code> 配置</li>
+<li>✅ 生成路由 <code>/tutorials</code></li>
+<li>✅ 在导航栏添加&quot;教程中心&quot;链接</li>
+<li>✅ 按配置展示文档列表</li>
+</ol>
+<h2 id="%E5%AE%8C%E6%95%B4%E7%A4%BA%E4%BE%8B" tabindex="-1"><a class="header-anchor" href="#%E5%AE%8C%E6%95%B4%E7%A4%BA%E4%BE%8B"><span>完整示例</span></a></h2>
+<h3 id="%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84" tabindex="-1"><a class="header-anchor" href="#%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84"><span>文件结构</span></a></h3>
+<pre><code>content/
+├── posts/           # 博客（已有）
+├── pages/           # 文档（已有）
+├── files/           # 文件（排除）
+└── tutorials/       # 新建教程文件夹
+    ├── index.md     # 文件夹配置
+    ├── getting-started.md
+    ├── advanced-features.md
+    └── api/
+        ├── index.md
+        ├── authentication.md
+        └── endpoints.md
+</code></pre>
+<h3 id="index.md-%E9%85%8D%E7%BD%AE" tabindex="-1"><a class="header-anchor" href="#index.md-%E9%85%8D%E7%BD%AE"><span><a href="http://index.md" target="_blank" rel="noopener noreferrer">index.md</a> 配置</span></a></h3>
+<pre><code class="language-yaml"><span class="hljs-meta">---</span>
+<span class="hljs-attr">title:</span> <span class="hljs-string">教程中心</span>
+<span class="hljs-attr">description:</span> <span class="hljs-string">完整的系统教程</span>
+<span class="hljs-attr">type:</span> <span class="hljs-string">page</span>
+<span class="hljs-attr">enableTree:</span> <span class="hljs-literal">true</span>
+<span class="hljs-attr">showBreadcrumb:</span> <span class="hljs-literal">true</span>
+<span class="hljs-attr">layout:</span> <span class="hljs-string">sidebar</span>
+<span class="hljs-attr">order:</span> <span class="hljs-number">5</span>
+<span class="hljs-meta">---
+</span>
+<span class="hljs-comment"># 教程中心</span>
+<span class="hljs-string">...</span>
+</code></pre>
+<h3 id="%E6%96%87%E6%A1%A3%E9%85%8D%E7%BD%AE%E7%A4%BA%E4%BE%8B" tabindex="-1"><a class="header-anchor" href="#%E6%96%87%E6%A1%A3%E9%85%8D%E7%BD%AE%E7%A4%BA%E4%BE%8B"><span>文档配置示例</span></a></h3>
+<p><strong>置顶文档</strong>:</p>
+<pre><code class="language-yaml"><span class="hljs-meta">---</span>
+<span class="hljs-attr">title:</span> <span class="hljs-string">⭐</span> <span class="hljs-string">重要通知</span>
+<span class="hljs-attr">pinned:</span> <span class="hljs-literal">true</span>
+<span class="hljs-attr">priority:</span> <span class="hljs-number">100</span>
+<span class="hljs-meta">---
+</span></code></pre>
+<p><strong>高优先级文档</strong>:</p>
+<pre><code class="language-yaml"><span class="hljs-meta">---</span>
+<span class="hljs-attr">title:</span> <span class="hljs-string">快速开始</span>
+<span class="hljs-attr">priority:</span> <span class="hljs-number">50</span>
+<span class="hljs-attr">order:</span> <span class="hljs-number">1</span>
+<span class="hljs-meta">---
+</span></code></pre>
+<p><strong>普通文档</strong>:</p>
+<pre><code class="language-yaml"><span class="hljs-meta">---</span>
+<span class="hljs-attr">title:</span> <span class="hljs-string">进阶指南</span>
+<span class="hljs-attr">order:</span> <span class="hljs-number">10</span>
+<span class="hljs-meta">---
+</span></code></pre>
+<p><strong>子文档</strong>:</p>
+<pre><code class="language-yaml"><span class="hljs-meta">---</span>
+<span class="hljs-attr">title:</span> <span class="hljs-string">API</span> <span class="hljs-string">认证</span>
+<span class="hljs-attr">parent:</span> <span class="hljs-string">api-index</span>
+<span class="hljs-attr">order:</span> <span class="hljs-number">1</span>
+<span class="hljs-meta">---
+</span></code></pre>
+<h2 id="%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9" tabindex="-1"><a class="header-anchor" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span>注意事项</span></a></h2>
+<ol>
+<li><strong>文件夹命名</strong>：使用小写字母和连字符，如 <code>my-tutorials</code></li>
+<li><strong>collection 字段</strong>：应与文件夹名称一致</li>
+<li><strong>id 字段</strong>：用于建立父子关系时必须唯一</li>
+<li><strong>排序字段</strong>：数值型字段使用数字，不要加引号</li>
+<li><strong>布尔字段</strong>：使用 <code>true</code> 或 <code>false</code>，不要加引号</li>
+</ol>
+<h2 id="%E6%95%85%E9%9A%9C%E6%8E%92%E6%9F%A5" tabindex="-1"><a class="header-anchor" href="#%E6%95%85%E9%9A%9C%E6%8E%92%E6%9F%A5"><span>故障排查</span></a></h2>
+<h3 id="%E9%97%AE%E9%A2%98%EF%BC%9A%E6%96%B0%E6%96%87%E4%BB%B6%E5%A4%B9%E6%B2%A1%E6%9C%89%E5%87%BA%E7%8E%B0%E5%9C%A8%E5%AF%BC%E8%88%AA%E6%A0%8F" tabindex="-1"><a class="header-anchor" href="#%E9%97%AE%E9%A2%98%EF%BC%9A%E6%96%B0%E6%96%87%E4%BB%B6%E5%A4%B9%E6%B2%A1%E6%9C%89%E5%87%BA%E7%8E%B0%E5%9C%A8%E5%AF%BC%E8%88%AA%E6%A0%8F"><span>问题：新文件夹没有出现在导航栏</span></a></h3>
+<p><strong>检查</strong>：</p>
+<ul>
+<li>文件夹是否在 <code>content/</code> 目录下</li>
+<li>文件夹内是否有 <code>.md</code> 文件</li>
+<li>是否重启了开发服务器</li>
+</ul>
+<h3 id="%E9%97%AE%E9%A2%98%EF%BC%9A%E6%8E%92%E5%BA%8F%E4%B8%8D%E6%AD%A3%E7%A1%AE" tabindex="-1"><a class="header-anchor" href="#%E9%97%AE%E9%A2%98%EF%BC%9A%E6%8E%92%E5%BA%8F%E4%B8%8D%E6%AD%A3%E7%A1%AE"><span>问题：排序不正确</span></a></h3>
+<p><strong>检查</strong>：</p>
+<ul>
+<li>front matter 格式是否正确</li>
+<li>数值字段是否有引号</li>
+<li><code>collection</code> 字段是否与文件夹名匹配</li>
+</ul>
+<h3 id="%E9%97%AE%E9%A2%98%EF%BC%9A%E6%A0%91%E5%BD%A2%E7%BB%93%E6%9E%84%E4%B8%8D%E6%98%BE%E7%A4%BA" tabindex="-1"><a class="header-anchor" href="#%E9%97%AE%E9%A2%98%EF%BC%9A%E6%A0%91%E5%BD%A2%E7%BB%93%E6%9E%84%E4%B8%8D%E6%98%BE%E7%A4%BA"><span>问题：树形结构不显示</span></a></h3>
+<p><strong>检查</strong>：</p>
+<ul>
+<li><code>index.md</code> 中 <code>enableTree</code> 是否为 <code>true</code></li>
+<li><code>parent</code> 字段是否指向正确的 <code>id</code></li>
+<li>父文档是否存在</li>
+</ul>
+<h2 id="%E6%8A%80%E6%9C%AF%E7%BB%86%E8%8A%82" tabindex="-1"><a class="header-anchor" href="#%E6%8A%80%E6%9C%AF%E7%BB%86%E8%8A%82"><span>技术细节</span></a></h2>
+<h3 id="%E7%9B%B8%E5%85%B3%E6%96%87%E4%BB%B6" tabindex="-1"><a class="header-anchor" href="#%E7%9B%B8%E5%85%B3%E6%96%87%E4%BB%B6"><span>相关文件</span></a></h3>
+<ul>
+<li><code>/src/utils/folderScanner.js</code> - 文件夹扫描</li>
+<li><code>/src/utils/documentCenter.js</code> - 文档排序和树形结构</li>
+<li><code>/src/utils/markdownIndex.js</code> - Markdown 加载</li>
+<li><code>/src/App.jsx</code> - 动态路由生成</li>
+<li><code>/src/components/layout/Header.jsx</code> - 动态导航</li>
+<li><code>/src/pages/DynamicDocumentPage.jsx</code> - 动态页面</li>
+</ul>
+<h3 id="%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86" tabindex="-1"><a class="header-anchor" href="#%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span>工作原理</span></a></h3>
+<ol>
+<li>应用启动时，<code>folderScanner.js</code> 扫描 content 目录</li>
+<li>读取每个文件夹的 <code>index.md</code> 配置</li>
+<li>生成文件夹配置数组</li>
+<li><code>App.jsx</code> 根据配置动态创建路由</li>
+<li><code>Header.jsx</code> 根据配置动态添加导航链接</li>
+<li>用户访问路由时，<code>DynamicDocumentPage</code> 渲染相应的文档中心</li>
+</ol>
+<h2 id="%E6%80%BB%E7%BB%93" tabindex="-1"><a class="header-anchor" href="#%E6%80%BB%E7%BB%93"><span>总结</span></a></h2>
+<p>现在您可以：</p>
+<ul>
+<li>✅ 在 <code>content/</code> 下创建任意文件夹</li>
+<li>✅ 使用 <code>index.md</code> 自定义文件夹展示</li>
+<li>✅ 使用 front matter 控制文档排序</li>
+<li>✅ 建立树形结构和面包屑导航</li>
+<li>✅ 自动生成路由和导航</li>
+</ul>
+<p>无需修改任何代码！🎉</p>
+
+        </div>
+      </article>
+    </div>
+  </div>
+  
+  <!-- React 应用入口 (用于 Hydration) -->
+  <script type="module" src="./assets/index.js"></script>
+  
+  <!-- 预渲染元数据 (供 React 使用) -->
+  <script id="prerender-data" type="application/json">
+  {"title":"自动文件夹扫描指南","metadata":{"title":"自动文件夹扫描指南","id":"auto-folder-scan-guide","type":"page","collection":"tutorials","parent":"advanced-index","order":2,"date":"2025-12-31T00:00:00.000Z","author":"System","tags":["tutorial","automation","folder-scan"],"category":"教程","pinned":true,"relatedDocs":["document-center-guide","advanced-features"]},"path":"/content/tutorials/advanced/auto-folder-scan-guide.html"}
+  </script>
+</body>
+</html>

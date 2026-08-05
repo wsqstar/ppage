@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- 基础 SEO -->
+  <title>DocumentCenter 快速参考 - 个人主页</title>
+  <meta name="description" content="DocumentCenter 快速参考
+
+本文档提供 DocumentCenter 组件的快速参考指南。如需详细教程，请参阅 文档中心组件指南。
+
+> 💡 提示：如果你是第一次使用，建议先阅读 基础概念介绍 和 高级功能使用。
+
+基础用法
+
+jsx
+import { DocumentCenter } from './...">
+  <meta name="keywords" content="reference, quick-start, api">
+  <meta name="author" content="Your Name">
+  
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="">
+  <meta property="og:title" content="DocumentCenter 快速参考 - 个人主页">
+  <meta property="og:description" content="DocumentCenter 快速参考
+
+本文档提供 DocumentCenter 组件的快速参考指南。如需详细教程，请参阅 文档中心组件指南。
+
+> 💡 提示：如果你是第一次使用，建议先阅读 基础概念介绍 和 高级功能使用。
+
+基础用法
+
+jsx
+import { DocumentCenter } from './...">
+  <meta property="og:image" content="/og-image.png">
+  <meta property="og:site_name" content="个人主页">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="">
+  <meta name="twitter:title" content="DocumentCenter 快速参考 - 个人主页">
+  <meta name="twitter:description" content="DocumentCenter 快速参考
+
+本文档提供 DocumentCenter 组件的快速参考指南。如需详细教程，请参阅 文档中心组件指南。
+
+> 💡 提示：如果你是第一次使用，建议先阅读 基础概念介绍 和 高级功能使用。
+
+基础用法
+
+jsx
+import { DocumentCenter } from './...">
+  <meta name="twitter:image" content="/og-image.png">
+  
+  <!-- 结构化数据 (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "DocumentCenter 快速参考",
+    "description": "DocumentCenter 快速参考
+
+本文档提供 DocumentCenter 组件的快速参考指南。如需详细教程，请参阅 文档中心组件指南。
+
+> 💡 提示：如果你是第一次使用，建议先阅读 基础概念介绍 和 高级功能使用。
+
+基础用法
+
+jsx
+import { DocumentCenter } from './...",
+    "author": {
+      "@type": "Person",
+      "name": "Your Name"
+    },
+    "datePublished": "Wed Dec 31 2025 08:00:00 GMT+0800 (中国标准时间)",
+    "dateModified": "Wed Dec 31 2025 08:00:00 GMT+0800 (中国标准时间)",
+    "publisher": {
+      "@type": "Organization",
+      "name": "个人主页",
+      "url": ""
+    }
+  }
+  </script>
+  
+  <!-- 预加载关键资源 -->
+  <link rel="preload" href="./assets/index.css" as="style">
+  <link rel="preload" href="./assets/index.js" as="script">
+  
+  <!-- 样式表 -->
+  <link rel="stylesheet" href="./assets/index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github-dark.min.css">
+  
+  <!-- React Hydration 标记 -->
+  <meta name="prerender" content="true">
+  <meta name="hydrate" content="true">
+</head>
+<body>
+  <!-- SSG 预渲染内容 -->
+  <div id="root">
+    <div class="markdown-static-content">
+      <article class="markdown-article">
+        <header class="article-header">
+          <h1>DocumentCenter 快速参考</h1>
+          <time datetime="Wed Dec 31 2025 08:00:00 GMT+0800 (中国标准时间)">Wed Dec 31 2025 08:00:00 GMT+0800 (中国标准时间)</time>
+          <div class="tags"><span class="tag">reference</span><span class="tag">quick-start</span><span class="tag">api</span></div>
+        </header>
+        <div class="article-content">
+          <h1 id="documentcenter-%E5%BF%AB%E9%80%9F%E5%8F%82%E8%80%83" tabindex="-1"><a class="header-anchor" href="#documentcenter-%E5%BF%AB%E9%80%9F%E5%8F%82%E8%80%83"><span>DocumentCenter 快速参考</span></a></h1>
+<p>本文档提供 DocumentCenter 组件的快速参考指南。如需详细教程，请参阅 <a href="#doc-document-center-guide">文档中心组件指南</a>。</p>
+<blockquote>
+<p>💡 <strong>提示</strong>：如果你是第一次使用，建议先阅读 <a href="#doc-getting-started">基础概念介绍</a> 和 <a href="#doc-advanced-features">高级功能使用</a>。</p>
+</blockquote>
+<h2 id="%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95" tabindex="-1"><a class="header-anchor" href="#%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95"><span>基础用法</span></a></h2>
+<pre><code class="language-jsx"><span class="hljs-keyword">import</span> { <span class="hljs-title class_">DocumentCenter</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./components/documentation/DocumentCenter&#x27;</span>;
+
+<span class="hljs-comment">// 最简单的用法</span>
+<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">DocumentCenter</span> /&gt;</span></span>
+</code></pre>
+<h2 id="%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE" tabindex="-1"><a class="header-anchor" href="#%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE"><span>常用配置</span></a></h2>
+<table>
+<thead>
+<tr>
+<th>Props</th>
+<th>类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>type</code></td>
+<td>string</td>
+<td>‘all’</td>
+<td>文档类型：‘post’ / ‘page’ / ‘all’</td>
+</tr>
+<tr>
+<td><code>collection</code></td>
+<td>string</td>
+<td>null</td>
+<td>集合名称过滤</td>
+</tr>
+<tr>
+<td><code>enableTree</code></td>
+<td>boolean</td>
+<td>false</td>
+<td>启用树形结构</td>
+</tr>
+<tr>
+<td><code>customSort</code></td>
+<td>Function|string</td>
+<td>‘order’</td>
+<td>排序方式</td>
+</tr>
+<tr>
+<td><code>customFilter</code></td>
+<td>Function</td>
+<td>null</td>
+<td>自定义过滤</td>
+</tr>
+<tr>
+<td><code>title</code></td>
+<td>string</td>
+<td>null</td>
+<td>标题</td>
+</tr>
+<tr>
+<td><code>showCount</code></td>
+<td>boolean</td>
+<td>true</td>
+<td>显示文档数量</td>
+</tr>
+<tr>
+<td><code>showBreadcrumb</code></td>
+<td>boolean</td>
+<td>false</td>
+<td>显示面包屑</td>
+</tr>
+<tr>
+<td><code>layout</code></td>
+<td>string</td>
+<td>‘sidebar’</td>
+<td>布局：‘sidebar’ / ‘dropdown’ / ‘tabs’</td>
+</tr>
+</tbody>
+</table>
+<h2 id="front-matter-%E9%85%8D%E7%BD%AE" tabindex="-1"><a class="header-anchor" href="#front-matter-%E9%85%8D%E7%BD%AE"><span>Front Matter 配置</span></a></h2>
+<pre><code class="language-yaml"><span class="hljs-meta">---</span>
+<span class="hljs-attr">title:</span> <span class="hljs-string">文档标题</span>        <span class="hljs-comment"># 必填：显示标题</span>
+<span class="hljs-attr">id:</span> <span class="hljs-string">doc-id</span>           <span class="hljs-comment"># 可选：唯一标识符</span>
+<span class="hljs-attr">order:</span> <span class="hljs-number">1</span>             <span class="hljs-comment"># 可选：排序序号</span>
+<span class="hljs-attr">parent:</span> <span class="hljs-string">parent-id</span>    <span class="hljs-comment"># 可选：父文档 ID</span>
+<span class="hljs-attr">collection:</span> <span class="hljs-string">guide</span>    <span class="hljs-comment"># 可选：集合名称</span>
+<span class="hljs-attr">date:</span> <span class="hljs-number">2025-12-31</span>     <span class="hljs-comment"># 可选：日期</span>
+<span class="hljs-attr">author:</span> <span class="hljs-string">作者</span>         <span class="hljs-comment"># 可选：作者</span>
+<span class="hljs-attr">tags:</span> [<span class="hljs-string">tag1</span>, <span class="hljs-string">tag2</span>]   <span class="hljs-comment"># 可选：标签</span>
+<span class="hljs-attr">category:</span> <span class="hljs-string">分类</span>       <span class="hljs-comment"># 可选：分类</span>
+<span class="hljs-meta">---
+</span></code></pre>
+<h2 id="%E5%BF%AB%E9%80%9F%E7%A4%BA%E4%BE%8B" tabindex="-1"><a class="header-anchor" href="#%E5%BF%AB%E9%80%9F%E7%A4%BA%E4%BE%8B"><span>快速示例</span></a></h2>
+<h3 id="%E5%8D%9A%E5%AE%A2%E5%88%97%E8%A1%A8" tabindex="-1"><a class="header-anchor" href="#%E5%8D%9A%E5%AE%A2%E5%88%97%E8%A1%A8"><span>博客列表</span></a></h3>
+<pre><code class="language-jsx">&lt;<span class="hljs-title class_">DocumentCenter</span> type=<span class="hljs-string">&quot;post&quot;</span> title=<span class="hljs-string">&quot;博客&quot;</span> /&gt;
+</code></pre>
+<h3 id="%E6%96%87%E6%A1%A3%E4%B8%AD%E5%BF%83" tabindex="-1"><a class="header-anchor" href="#%E6%96%87%E6%A1%A3%E4%B8%AD%E5%BF%83"><span>文档中心</span></a></h3>
+<pre><code class="language-jsx">&lt;<span class="hljs-title class_">DocumentCenter</span> type=<span class="hljs-string">&quot;page&quot;</span> title=<span class="hljs-string">&quot;文档&quot;</span> /&gt;
+</code></pre>
+<h3 id="%E6%A0%91%E5%BD%A2%E6%96%87%E6%A1%A3" tabindex="-1"><a class="header-anchor" href="#%E6%A0%91%E5%BD%A2%E6%96%87%E6%A1%A3"><span>树形文档</span></a></h3>
+<pre><code class="language-jsx">&lt;<span class="hljs-title class_">DocumentCenter</span> enableTree={<span class="hljs-literal">true</span>} showBreadcrumb={<span class="hljs-literal">true</span>} /&gt;
+</code></pre>
+<h3 id="%E7%89%B9%E5%AE%9A%E9%9B%86%E5%90%88" tabindex="-1"><a class="header-anchor" href="#%E7%89%B9%E5%AE%9A%E9%9B%86%E5%90%88"><span>特定集合</span></a></h3>
+<pre><code class="language-jsx">&lt;<span class="hljs-title class_">DocumentCenter</span> collection=<span class="hljs-string">&quot;tutorial&quot;</span> /&gt;
+</code></pre>
+<h3 id="%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8E%92%E5%BA%8F" tabindex="-1"><a class="header-anchor" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8E%92%E5%BA%8F"><span>自定义排序</span></a></h3>
+<pre><code class="language-jsx">&lt;<span class="hljs-title class_">DocumentCenter</span> customSort=<span class="hljs-string">&quot;date&quot;</span> /&gt;
+<span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">DocumentCenter</span> <span class="hljs-attr">customSort</span>=<span class="hljs-string">{(a,b)</span> =&gt;</span> a.title.localeCompare(b.title)} /&gt;</span>
+</code></pre>
+<h3 id="%E8%87%AA%E5%AE%9A%E4%B9%89%E8%BF%87%E6%BB%A4" tabindex="-1"><a class="header-anchor" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E8%BF%87%E6%BB%A4"><span>自定义过滤</span></a></h3>
+<pre><code class="language-jsx">&lt;<span class="hljs-title class_">DocumentCenter</span> customFilter={<span class="hljs-function">(<span class="hljs-params">doc</span>) =&gt;</span> doc.<span class="hljs-property">metadata</span>?.<span class="hljs-property">tags</span>?.<span class="hljs-title function_">includes</span>(<span class="hljs-string">&#x27;guide&#x27;</span>)} /&gt;
+</code></pre>
+<h2 id="%E5%B7%A5%E5%85%B7%E5%87%BD%E6%95%B0" tabindex="-1"><a class="header-anchor" href="#%E5%B7%A5%E5%85%B7%E5%87%BD%E6%95%B0"><span>工具函数</span></a></h2>
+<pre><code class="language-javascript"><span class="hljs-keyword">import</span> {
+  extractMetadata,      <span class="hljs-comment">// 提取元数据</span>
+  enhanceDocument,      <span class="hljs-comment">// 增强文档</span>
+  sortDocuments,        <span class="hljs-comment">// 排序文档</span>
+  buildDocumentTree,    <span class="hljs-comment">// 构建树</span>
+  searchDocuments,      <span class="hljs-comment">// 搜索文档</span>
+} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;./utils/documentCenter&#x27;</span>;
+</code></pre>
+<h2 id="%E6%96%87%E4%BB%B6%E4%BD%8D%E7%BD%AE" tabindex="-1"><a class="header-anchor" href="#%E6%96%87%E4%BB%B6%E4%BD%8D%E7%BD%AE"><span>文件位置</span></a></h2>
+<pre><code>src/
+  components/
+    documentation/
+      DocumentCenter.jsx          # 主组件
+      DocumentCenter.module.css   # 样式
+  utils/
+    documentCenter.js             # 工具函数
+  examples/
+    DocumentCenterExamples.jsx    # 示例代码
+
+content/
+  posts/                          # 博客文章
+  pages/                          # 文档页面
+</code></pre>
+<h2 id="%E5%B1%82%E7%BA%A7%E5%85%B3%E7%B3%BB%E7%A4%BA%E4%BE%8B" tabindex="-1"><a class="header-anchor" href="#%E5%B1%82%E7%BA%A7%E5%85%B3%E7%B3%BB%E7%A4%BA%E4%BE%8B"><span>层级关系示例</span></a></h2>
+<pre><code class="language-yaml"><span class="hljs-comment"># parent.md</span>
+<span class="hljs-meta">---</span>
+<span class="hljs-attr">id:</span> <span class="hljs-string">getting-started</span>
+<span class="hljs-attr">title:</span> <span class="hljs-string">入门指南</span>
+<span class="hljs-attr">order:</span> <span class="hljs-number">1</span>
+<span class="hljs-meta">---
+</span>
+<span class="hljs-comment"># child-1.md</span>
+<span class="hljs-meta">---</span>
+<span class="hljs-attr">id:</span> <span class="hljs-string">installation</span>
+<span class="hljs-attr">title:</span> <span class="hljs-string">安装</span>
+<span class="hljs-attr">parent:</span> <span class="hljs-string">getting-started</span>
+<span class="hljs-attr">order:</span> <span class="hljs-number">1</span>
+<span class="hljs-meta">---
+</span>
+<span class="hljs-comment"># child-2.md</span>
+<span class="hljs-meta">---</span>
+<span class="hljs-attr">id:</span> <span class="hljs-string">configuration</span>
+<span class="hljs-attr">title:</span> <span class="hljs-string">配置</span>
+<span class="hljs-attr">parent:</span> <span class="hljs-string">getting-started</span>
+<span class="hljs-attr">order:</span> <span class="hljs-number">2</span>
+<span class="hljs-meta">---
+</span></code></pre>
+<h2 id="%E5%AE%8C%E6%95%B4%E7%A4%BA%E4%BE%8B" tabindex="-1"><a class="header-anchor" href="#%E5%AE%8C%E6%95%B4%E7%A4%BA%E4%BE%8B"><span>完整示例</span></a></h2>
+<pre><code class="language-jsx">&lt;<span class="hljs-title class_">DocumentCenter</span>
+  type=<span class="hljs-string">&quot;page&quot;</span>
+  collection=<span class="hljs-string">&quot;user-guide&quot;</span>
+  title=<span class="hljs-string">&quot;用户指南&quot;</span>
+  enableTree={<span class="hljs-literal">true</span>}
+  showBreadcrumb={<span class="hljs-literal">true</span>}
+  showCount={<span class="hljs-literal">true</span>}
+  layout=<span class="hljs-string">&quot;sidebar&quot;</span>
+  customSort=<span class="hljs-string">&quot;order&quot;</span>
+  customFilter={<span class="hljs-function">(<span class="hljs-params">doc</span>) =&gt;</span> doc.<span class="hljs-property">metadata</span>?.<span class="hljs-property">category</span> === <span class="hljs-string">&#x27;guide&#x27;</span>}
+  onDocumentChange={<span class="hljs-function">(<span class="hljs-params">doc</span>) =&gt;</span> <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;切换到:&#x27;</span>, doc.<span class="hljs-property">title</span>)}
+  className=<span class="hljs-string">&quot;my-custom-class&quot;</span>
+/&gt;
+</code></pre>
+
+        </div>
+      </article>
+    </div>
+  </div>
+  
+  <!-- React 应用入口 (用于 Hydration) -->
+  <script type="module" src="./assets/index.js"></script>
+  
+  <!-- 预渲染元数据 (供 React 使用) -->
+  <script id="prerender-data" type="application/json">
+  {"title":"DocumentCenter 快速参考","metadata":{"title":"DocumentCenter 快速参考","id":"quick-reference","type":"page","collection":"documentation","order":5,"date":"2025-12-31T00:00:00.000Z","author":"System","tags":["reference","quick-start","api"],"category":"参考文档","relatedDocs":["document-center-guide","advanced-features","getting-started"]},"path":"/content/pages/quick-reference.html"}
+  </script>
+</body>
+</html>
