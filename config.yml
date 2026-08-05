@@ -171,6 +171,14 @@ projects:
     tags:
       - "前端"
       - "GitHub"
+  - name: "personal-intro-template"
+    description: "开源了之前的磨砂玻璃主题的个人主页项目 personal-intro-template"
+    url: "https://github.com/wsqstar/personal-intro-template"
+    tags:
+      - "个人主页"
+      - "开源"
+      - "模板"
+      - "GitHub"
 
 
 # 友情链接配置
@@ -233,6 +241,5 @@ analytics:
   # true: 开发环境也会发送数据到 GA
   # false: 只在生产环境（部署后）发送数据
   enableInDev: false
-
 
 
