@@ -1,0 +1,11 @@
+# macOS
+.DS_Store
+
+# 本地环境与密钥
+.env
+.env.*
+*.local
+
+# 编辑器
+.vscode/
+.idea/
