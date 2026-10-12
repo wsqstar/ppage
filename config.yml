@@ -6,7 +6,7 @@
 # ========================================
 site:
   title: "Shiqi Wang"
-  description: "This is my personal website."
+  description: "Personal homepage of Shiqi Wang, PhD student at HKUST(GZ) UGOD."
   author: "Shiqi Wang"
   baseUrl: "/"
   favicon: "/GIStudy.jpg"  
@@ -18,7 +18,7 @@ profile:
   name: "Shiqi Wang"
   avatar: "/assets/images/GIStudy.jpg"  # 请将头像放在 public/assets/images/ 目录下
   bio: "HKUST(GZ) UGOD 1st Year PhD student"
-  email: "shiqi.wang@example.com"
+  email: ""  # 留空则不显示联系邮箱；填写真实地址后即可展示
   location: "Guangzhou, China"
 
 # ========================================
@@ -28,9 +28,10 @@ social:
   - name: "GitHub"
     icon: "github"
     url: "https://github.com/wsqstar"
-  - name: "Email"
-    icon: "email"
-    url: "【请填写】mailto:your.email@example.com"
+  # 邮箱：填写真实地址后取消注释（请勿保留占位值）
+  # - name: "Email"
+  #   icon: "email"
+  #   url: "mailto:<真实邮箱>"
   # - name: "Twitter"
   #   icon: "twitter"
   #   url: "https://twitter.com/shiqiwang98"
@@ -195,7 +196,6 @@ links:
   - name: "Chunhou"
     description: "Phd Student in HKUST(GZ)"
     url: "https://jichunhou.me"
-    avatar: "/assets/images/link-avatar.jpg"  # 可选：链接站点的头像或 logo
     tags:
       - "博客"
       - "技术"
