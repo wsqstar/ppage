@@ -1,0 +1,11 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://shiqi-wang.com/sitemap.xml
+
+# 禁止爬取的路径
+Disallow: /assets/
+Disallow: /*.json$
+Disallow: /content/protected/
