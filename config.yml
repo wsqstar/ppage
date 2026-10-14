@@ -17,7 +17,7 @@ site:
 profile:
   name: "Shiqi Wang"
   avatar: "/assets/images/GIStudy.jpg"  # 请将头像放在 public/assets/images/ 目录下
-  bio: "HKUST(GZ) UGOD 1st Year PhD student"
+  bio: "HKUST(GZ) UGOD 2nd Year PhD student"
   email: ""  # 留空则不显示联系邮箱；填写真实地址后即可展示
   location: "Guangzhou, China"
 
